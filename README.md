@@ -16,6 +16,12 @@ Gli utenti registrati (possibilmente con il servizio di sign-on di UNIMI) posson
 - commint name [TASKID] comment on task
 - merge request [TASKID] globals information of new feature / bugfix
 
+### Souces and help
+
+https://dev.to/noruwa/folder-structure-for-modern-web-applications-4d11 FOLDER STRUCTURE
+https://www.w3schools.com/xml/ajax_intro.asp AJAX
+
+
 
 
 

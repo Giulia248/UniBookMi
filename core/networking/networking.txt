@@ -1,0 +1,12 @@
+API's all etc etc
+
+HOW to run node js
+In Windows, you need to set node.js folder path into system variables or user variables.
+
+1) open Control Panel -> System and Security -> System -> Advanced System Settings -> Environment Variables
+
+2) in "User variables" or "System variables" find variable PATH and add node.js folder path as value. Usually it is C:\Program Files\nodejs;. If variable doesn't exists, create it.
+
+3) Restart your IDE or computer.
+
+It is useful add also "npm" and "Git" paths as variable, separated by semicolon.
