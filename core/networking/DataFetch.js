@@ -16,10 +16,9 @@ async function apiPost() {
       .then(console.log)
 
 }
-
-async function apiFetch() {
+async function apiFetch(url) {
     
-    fetch("url")
+    fetch(url)
       .then(res => res.json())
       .then(console.log)
 
