@@ -1,4 +1,7 @@
 
+/*
+		Light button
+*/
 .button1{
 
 	background:linear-gradient(to bottom, #3131df 5%, #80a0ff 100%);
@@ -23,5 +26,32 @@
 	position:relative;
 	top:1px;
 }
+
+/*
+		DARK button
+*/
+.button2 {
+	background:linear-gradient(to bottom, #7ea3de 5%, #020247 100%);
+	background-color:#7ea3de;
+	border-radius:11px;
+	border:3px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:18px;
+	padding: 5px;
+	text-decoration:none;
+}
+.button2:hover {
+	background:linear-gradient(to bottom, #020247 5%, #7ea3de 100%);
+	background-color:#020247;
+}
+.button2:active {
+	position:relative;
+	top:1px;
+}
+
+        
 
         
