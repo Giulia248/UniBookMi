@@ -1,0 +1,40 @@
+
+body{
+    background-color: #bfcfff;
+}
+
+p{
+    color: black;
+    font-size: 18px;
+    text-align: justify;
+}
+
+h1, h2, h3, h4{
+    text-align: center;
+}
+
+#specialP{
+    color: #020247;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+#leftDiv{
+    padding: 10px;
+    width: 45%;
+    border: #002db3;
+    border-style: double;
+    float: left;
+    background-color: whitesmoke;
+}
+
+#rightDiv{
+    padding: 10px;
+    width: 45%;
+    border: #002db3;
+    border-style: double;
+    float: right;
+    background-color: whitesmoke;
+}
+
+
