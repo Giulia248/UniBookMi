@@ -1,57 +1,68 @@
 {
+    "newsUrl": "https://lastatalenews.unimi.it/",
     "news":[
         
         {
             "id": 1,
             "title": "Welcome Day per studentesse e studenti del Programma Marco Polo e Turandot",
+            "url": "https://lastatalenews.unimi.it/sites/default/files/styles/paragraph_image/public/image/paragraph/1-MarcoPolo_Turandot_gruppo.jpg?h=8621808d&itok=VT1vQPPO",
             "text": "l 27 novembre, dalle ore 14.30, in Sala Malliani, in via Festa del Perdono 7, si tiene, alle ore 10, il Welcome Day per le studentesse e studenti di nazionalità cinese che aderiscono al Programma Marco Polo e Turandot, i due progetti nati per promuovere il sistema universitario italiano in Cina e facilitare l’inserimento degli studenti cinesi nelle università italiane. \nL’incontro sarà aperto dai saluti della prorettrice ai Servizi per la didattica e gli studenti e  presidente del Centro Linguistico d’Ateneo SLAM, Marina Brambilla, e della prorettrice all’Internazionalizzazione, Antonella Baldi. A seguire, il benvenuto di Michela Argenti, direttrice del Centro SLAM. "
         },
         {
             "id": 2,
             "title": "Autismo e disordini del neurosviluppo: un passo avanti per il trattamento farmacologico",
+            "url": "https://lastatalenews.unimi.it/sites/default/files/styles/paragraph_image/public/image/paragraph/foto%20cover%20%281%29_1.png?h=8621808d&itok=psftJT4T",
             "text": "Grazie a uno studio realizzato su organoidi cerebrali e ora in fase pre-clinica, un team interdisciplinare di scienziati dell’Università Statale di Milano, di IEO – Istituto Europeo di Oncologia e di Human Technopole ha scoperto che l’inibizione farmacologica di uno specifico gene (GTF2I) fa regredire i sintomi principali dell’autismo in modelli pre-clinici della sindrome 7Dup, una rara condizione genetica del neurosviluppo che fa parte dei disordini dello spettro autistico."
         },
         {
             "id": 3,
             "title": "Letture cruciali. Libri che cambiano la vita",
+            "url": "https://lastatalenews.unimi.it/sites/default/files/styles/paragraph_image/public/image/paragraph/foto%20cover%2852%29.png?h=8621808d&itok=JNba5z1d",
             "text": "Ci sono libri che ti cambiano la vita. Il Centro Apice dell’Università degli Studi di Milano dedica una giornata di studio proprio a quei libri che hanno segnato in profondità il percorso biografico e intellettuale di alcuni lettori o di intere generazioni, influenzandone in modo duraturo le scelte e i comportamenti. Questo il tema dell'incontro '' Letture cruciali. Libri che cambiano la vita: fra storia, memoria collettiva e costruzione dell’io '' che si tiene il 5 dicembre dalle ore 9 nella Sala Napoleonica di via Sant'Antonio 12 e online su piattaforma Teams."
         },
         {
             "id": 4,
             "title": "La Statale premia i suoi atleti",
+            "url": "https://lastatalenews.unimi.it/sites/default/files/styles/paragraph_image/public/image/paragraph/foto%20cover%20%282%29-min.png?h=8621808d&itok=WzYsyjEx",
             "text": "Università Statale di Milano premia i suoi atleti. Si tiene l'11 dicembre, alle ore 11.30, nell'Aula Magna di via Festa del Perdono il tradizionale incontro, prima delle festività natalizie, dedicato allo sport in Statale. Un momento di festa e di riconoscimento per tutti coloro che, studentesse e studenti, ma anche dipendenti dell'Ateneo, si sono distinti nella diverse discipline sportive promosse dal Cus Statale e dall'associazione ricreativa ARCUS. "
         },
         {
             "id": 5,
             "title": "L'œuvre et les textes: cinq variations éditoriales. Lectio magistralis di Roger Chartier",
+            "url": "https://lastatalenews.unimi.it/sites/default/files/styles/paragraph_image/public/image/paragraph/LibroRogerChartier.jpg?h=8621808d&itok=CPzaoH9f",
             "text": "Lectio Magistralis di Roger Chartier all’Università degli Studi di Milano. Il 30 ottobre alle ore 17.30 in Sala Napoleonica, via Sant’Antonio12, lo storico francese, che ha rinnovato profondamente gli studi sulla storia del libro e della lettura, tiene la lectio intitolata “L'œuvre et les textes: cinq variations éditoriales”, preceduta dalla presentazione del suo ultimo lavoro, Cartes et fictions, XVIe-XVIIIe siècle (Collège de France Éditions, 2022), alle ore 15.00 nello stesso spazio."
         },
         {
             "id": 6,
             "title": "In Statale le Giornate di Studio sull’Arte Circense",
+            "url": "https://lastatalenews.unimi.it/sites/default/files/styles/paragraph_image/public/image/paragraph/03%20Gli%20studenti%20alle%20Giornate%20di%20Studio%20sull%27Arte%20Circense%20%28foto%20di%20Gerti%20Ibra%29.jpg?h=59f9d53c&itok=LMG1wD3Z",
             "text": "Dal 20 al 24 novembre l’Università Statale di Milano, presso il dipartimento di Beni culturali e ambientali (via Noto 8), torna a ospitare le Giornate di Studio sull’Arte Circense, un laboratorio aperto a studentesse e studenti, ma anche alla cittadinanza, che propone numerosi incontri con artisti e compagnie italiane e internazionali e professionisti dello spettacolo dal vivo per unire circo e mondo accademico. L'iniziativa è coordinata da Mariagabriella Cambiaghi, docente di Discipline dello spettacolo e curato dall’associazione Circo e Dintorni nell’ambito di Open Circus, progetto finanziato dal Ministero della Cultura."
         },
         {
             "id": 7,
             "title": "Job Fair 2023: una giornata in presenza per incontrare il mondo del lavoro",
+            "url": "https://lastatalenews.unimi.it/sites/default/files/styles/paragraph_image/public/image/paragraph/foto%20cover%2827%29-min.png?h=8621808d&itok=tAVwqL6x",
             "text": "ome passare dallo studio al mondo del lavoro: la Job Fair dell’Università degli Studi di Milano accompagna da anni studenti e studentesse dell’Ateneo in questo passaggio. L'edizione 2023 è articolata in una serie di incontri online, dal 14 al 22 settembre e dal 25 al 29 settembre, e in una giornata in presenza, il 4 ottobre, negli spazi dell'Ateneo, in via Festa del Perdono, a cui hanno partecipato oltre 90 aziende con i propri stand. "
         },
         
         {
             "id": 8,
             "title": "Autismo e disordini del neurosviluppo: un passo avanti per il trattamento farmacologico",
+            "url": "https://lastatalenews.unimi.it/sites/default/files/styles/paragraph_image/public/image/paragraph/foto%20cover%20%281%29_1.png?h=8621808d&itok=psftJT4T",
             "text": "Grazie a uno studio realizzato su organoidi cerebrali e ora in fase pre-clinica, un team interdisciplinare di scienziati dell’Università Statale di Milano, di IEO – Istituto Europeo di Oncologia e di Human Technopole ha scoperto che l’inibizione farmacologica di uno specifico gene (GTF2I) fa regredire i sintomi principali dell’autismo in modelli pre-clinici della sindrome 7Dup, una rara condizione genetica del neurosviluppo che fa parte dei disordini dello spettro autistico."
         },
         
         {
             "id": 9,
             "title": "Il ruolo cruciale delle Scienze della Terra nello studio dell’evoluzione umana",
+            "url": "https://lastatalenews.unimi.it/sites/default/files/styles/paragraph_image/public/image/paragraph/Indagini%20geoarcheologiche%20sui%20deposti%20del%20sito%20della%20Madonna%20dell%E2%80%99Arma%20%28Sanremo%29%20%28credit_%20MiC%29.jpg?h=8621808d&itok=k_hiEhcu",
             "text": "Attualmente non è possibile, come veniva fatto in passato, studiare un manufatto o un resto umano senza prendere in considerazione il contesto di provenienza. Come spiegato in un articolo apparso sulla rivista Nature Ecology & Evolution di Mike Morley della Flinders University (Australia) con la partecipazione di Andrea Zerboni, geoarcheologo della Statale, è il contributo del geoarcheologo a permettere di comprendere come fossero le condizioni climatiche in cui vissero i nostri antenati. Così come è lo studio dei sedimenti archeologici a dimostrare quando e come essi introdussero importanti innovazioni culturali come ad esempio l’uso del fuoco. Se da una parte sono archeologi e antropologi a spiegare quali fossero l’aspetto, le caratteristiche fisiche, le abitudini e le conoscenze dei nostri antenati, sempre più spesso sono le avanzate tecniche messe a punto nell’ambito delle Scienze della Terra a contestualizzare i ritrovamenti di fossili e strumenti in pietra."
         },
         
         {
             "id": 10,
             "title": "Torna a Milano la Giornata sulla Transizione Ecologica",
+            "url": "https://lastatalenews.unimi.it/sites/default/files/styles/paragraph_image/public/image/paragraph/Giornata%20della%20transizione%20ecologica%202023.jpg?h=8621808d&itok=MkbPW1tq",
             "text": "Si è tenuta nell’Aula Magna dell’Università degli Studi di Milano di via Festa del Perdono 7, la seconda edizione della Giornata sulla Transizione Ecologica organizzata dal dipartimento di Scienze e Politiche ambientali (ESP) dell’Ateneo. I lavori hanno preso il via alle ore 9.30 e si sono sviluppati, fino alle ore 17.30, all’interno di un palinsesto nel quale si sono alternati interventi a momenti di dibattito con esperti provenienti dal mondo dell’accademia, della politica, dell’impresa, delle associazioni e della comunicazione."
         }
     ]
