@@ -1,5 +1,5 @@
 body{
-    background-color: beige;
+    background-color: whitesmoke;
 }
 
 p{
@@ -12,13 +12,11 @@ h1, h2, h3, h4{
     text-align: center;
 }
 
-
 #specialP{
     color: #020247;
     font-size: 17px;
     font-weight: bold;
 }
-
 
 .grid-container {
     display: grid;
@@ -28,10 +26,43 @@ h1, h2, h3, h4{
     padding: 10px;
     border-radius: 5px;
   }
-  .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
+ div {
+    background-color: whitesmoke;
     border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 30px;
+    padding: 0px;
+    font-size: 18px;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
   }
+
+#titleP{
+    color: #020247;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#img{
+    width: 25%;
+    float: left;    
+    margin: 0 15px 0 0;
+}
+
+
+#textP{
+    padding-bottom: 50px;
+    padding-top: 50px;
+    padding-right: 20px;
+}
+
+#invisibleDiv{
+    border: 1px solid rgba(255, 255, 255, 0.0);
+    padding: 0px;
+    font-size: 18px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
