@@ -3,31 +3,37 @@
 <html>
 
 <!-- HTML header contains title, icon, css link and js link -->
+
+<!-- http://127.0.0.1:5500/features/main.html -->
+
+
 <head>
   <title>UniBookMi</title>
-  <link rel="icon" type="image/x-icon" href="..\resources\assets\icons\favicon.ico">
-  <link rel="stylesheet" href="..\resources\assets\styles\main.css">
-  <link rel="stylesheet" href="..\resources\assets\styles\buttons.css">
-  <script src="..\features\myScript.js"></script>
+  <link rel="icon" type="image/x-icon" href="http://127.0.0.1:5500/resources/icons/favicon.ico">
+  <link rel="stylesheet" href="http://127.0.0.1:5500/resources/styles/main.css">
+  <script src="http://127.0.0.1:5500/features/myScript.js"></script>
 </head>
 
 <body>
 
-<h1> UniBookMi </h1> 
+  <div id="centerDiv">
+    <img src="..\resources\images\logoOrizzontale.jpg" alt="LOGO">
+  </div>
+  
+
+  <div></div>
 
 <div id="leftDiv">
   <h3>
     News
   </h3>
-  <p >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in lacus eleifend, 
-    hendrerit sem sed, interdum augue. In posuere nulla eget augue gravida iaculis.
-     Fusce viverra diam purus, eu finibus metus facilisis eget. Nulla non tincidunt odio. 
-     Proin commodo tincidunt nulla, quis luctus mi tempor sed. Ut nec congue leo, eu blandit urna. 
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor sed sapien ut tincidunt.
-      Nunc mollis tellus in odio consequat gravida. Donec at libero non ante consectetur tristique.
-     Aliquam erat volutpat. Morbi purus augue, viverra vel blandit at, egestas nec purus.
+  <p>
+   In questa sezione troverai le notizie aggiornate sulla Statale di Milano, basati sui temi di <span id="specialP"> didattica, innovazione e cultura</span> 
   </p>
+
+  <a href="..\features\news\NewsView.html"> NEWS </a>
+  
+
 </div>
 
 <div id="rightDiv">
@@ -45,16 +51,6 @@
      Aliquam erat volutpat. Morbi purus augue, viverra vel blandit at, egestas nec purus.
   </p>
 </div>
-
-<div id="leftDiv">
-  <h3>
-    prova bottoni
-  </h3>
-
-  <button type="button" class="button1">bottone </button>
-  <button type="button" class="button2">bottone 2 </button>
-</div>
-
 
 </body>
 </html>

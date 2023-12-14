@@ -1,0 +1,70 @@
+
+body{
+
+   background-image: url("https://images.pexels.com/photos/2946974/pexels-photo-2946974.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-color: beige;
+}
+
+img{
+    width:300px;
+    height:100px; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+p{
+    color: black;
+    font-size: 18px;
+    text-align: justify;
+}
+
+h1, h2, h3, h4{
+    text-align: center;
+}
+
+
+#specialP{
+    color: #020247;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+#leftDiv{
+    padding: 10px;
+    width: 45%;
+    border: #002db3;
+    border-style: double;
+    margin-left: 10px;
+    float: left;
+    background: rgb(128,159,255);
+    background: radial-gradient(circle, rgba(128,159,255,0.8) 28%,
+    rgba(126,163,222,0.8) 64%, rgba(191,207,255,0.8) 87%);
+}
+
+#rightDiv{
+    padding: 10px;
+    width: 45%;
+    border: #002db3;
+    border-style: double;
+    margin-right: 10px;
+    float: right;
+    background: rgb(128,159,255);
+    background: radial-gradient(circle, rgba(128,159,255,0.8) 28%,
+    rgba(126,163,222,0.8) 64%, rgba(191,207,255,0.8) 87%);
+}
+
+#centerDiv{
+    padding: 0px;
+    width: 100%;
+    border: #002db3;
+    border-style: double;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgb(48,99,214);
+    background: radial-gradient(circle, rgba(48,99,214,0.5048144257703081) 56%, rgba(94,131,212,0.4543942577030813) 87%);
+}
+
+
