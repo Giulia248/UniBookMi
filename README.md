@@ -20,6 +20,7 @@ Gli utenti registrati (possibilmente con il servizio di sign-on di UNIMI) posson
 
 https://dev.to/noruwa/folder-structure-for-modern-web-applications-4d11 FOLDER STRUCTURE
 https://www.w3schools.com/xml/ajax_intro.asp AJAX
+https://www.youtube.com/watch?v=WfCJ3sHnLBM&t=1162s API node.js / express
 
 
 
