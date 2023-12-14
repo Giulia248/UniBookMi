@@ -5,11 +5,13 @@ PAGINA NUOVA da eliminare
 
 <!-- HTML header contains title, icon, css link and js link -->
 
+<!-- http://127.0.0.1:5500/.. -->
+
 <head>
   <title>UniBookMi</title>
-  <link rel="icon" type="image/x-icon" href="..\resources\assets\icons\favicon.ico">
-  <link rel="stylesheet" href="..\resources\assets\styles\main.css">
-  <script src="..\features\myScript.js"></script>
+  <link rel="icon" type="image/x-icon" href="http://127.0.0.1:5500/resources/icons/favicon.ico">
+  <link rel="stylesheet" href="http://127.0.0.1:5500/resources/styles/">
+  <script src="http://127.0.0.1:5500/features/"></script>
 </head>
 
 <body>
