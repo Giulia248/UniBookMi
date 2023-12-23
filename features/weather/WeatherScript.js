@@ -1,8 +1,24 @@
 
 // fetch local JSON
+function fetchLocalJson(){
+    
+    fetch('http://127.0.0.1:5500/core/models/WeatherOpenModel.json')
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data)
+        appendData(data);
+    })
+    .catch(function (err) {
+        console.log('error: ' + err);
+    });
+}
+
+// fetch remote JSON
 function fetchJson(){
     
-    fetch('http://127.0.0.1:5500/core/models/NewsModel.json')
+    fetch()
     .then(function (response) {
         return response.json();
     })
