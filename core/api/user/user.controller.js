@@ -5,21 +5,21 @@ const {
     getUsers,
     updateUser,
     deleteUser
-  } = require("./user.service");
+  } = require("http://127.0.0.1:5500//core/api/user/user.service.js");
   const { hashSync, genSaltSync, compareSync } = require("bcrypt");
   const { sign } = require("jsonwebtoken");
   
   module.exports = {
     createUser: (req, res) => {
       const body = req.body;
-      const salt = genSaltSync(10);
-      body.password = hashSync(body.password, salt);
+      const salt = genSaltSync(10); 
+      body.password = hashSync(body.password, salt); //encrypting password
       create(body, (err, results) => {
         if (err) {
           console.log(err);
           return res.status(500).json({
             success: 0,
-            message: "Database connection errror"
+            message: "Database connection error"
           });
         }
         return res.status(200).json({

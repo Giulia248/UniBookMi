@@ -1,4 +1,4 @@
-const pool = require("../../config/database");
+const pool = require("http://127.0.0.1:5500/core/database/config/database.js");
 
 module.exports = {
   create: (data, callBack) => {
