@@ -7,26 +7,29 @@ function fetchJson(){
         return response.json();
     })
     .then(function (data) {
-        console.log(data)
-        appendData(data);
+
+        // nulls and empty objects handling ! 
+        const filteredData = data.filter(data => data.departmentName !== "" );
+        console.log(filteredData);
+        appendData(filteredData);
+       
     })
     .catch(function (err) {
-        console.log('error: ' + err);
+        console.log('💀ERROR: ' + err);
     });
 }
 
 
 // add data on html page
 function appendData(data) {
-    var mainContainer = document.getElementById("myDiv");
-    var size = Object.keys( data.news).length
-    console.log(size);
+    var mainContainer = document.getElementById("departmentSelect");
+    var size = Object.keys(data).length;
     for (var i = 0; i < size; i++) {
 
-        var invisibleDiv = document.createElement("div");
-        invisibleDiv.id = "invisibleDiv"
-        mainContainer.appendChild(invisibleDiv);
-
-
+        console.log()
+        var opt = document.createElement('option');
+        opt.value = i;
+        opt.innerHTML = data[i].departmentName;
+        mainContainer.appendChild(opt);
     }
 }

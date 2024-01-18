@@ -36,9 +36,46 @@ body {
     font-size: 11px
 }
 
-.add-experience:hover {
-    background: #809fff;
-    color: #bfcfff;
+.add-reservation:hover {
+    background: #3131df;
+    color: white;
     cursor: pointer;
     border: solid 1px #7ea3de
+}
+
+.square-box-reservation{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: white;
+    border: lightgray;
+    border-style:solid
+}
+.square-box-reservation:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+.square-content-reservation{
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: black;
+}
+.square-content-reservation div {
+   display: table;
+   width: 100%;
+   height: 100%;
+}
+.square-content-reservation span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: black
+}
+
+select{
+    width: 100%;
 }
