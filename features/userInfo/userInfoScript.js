@@ -1,22 +1,22 @@
 
 // fetch local JSON
-function fetchJson(){
-    
-    fetch('http://127.0.0.1:5500/core/models/Departments.json')
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
+function fetchJson() {
 
-        // nulls and empty objects handling ! 
-        const filteredData = data.filter(data => data.departmentName !== "" );
-        console.log(filteredData);
-        appendData(filteredData);
-       
-    })
-    .catch(function (err) {
-        console.log('💀ERROR: ' + err);
-    });
+    fetch('http://127.0.0.1:5500/core/models/Departments.json')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+
+            // nulls and empty objects handling ! 
+            const filteredData = data.filter(data => data.departmentName !== "");
+            console.log(filteredData);
+            appendData(filteredData);
+
+        })
+        .catch(function (err) {
+            console.log('💀ERROR: ' + err);
+        });
 }
 
 
@@ -37,7 +37,7 @@ function appendData(data) {
 function toggleDarkMode() {
 
 
-  
+
     var elementEmail = document.getElementById('email1');
     elementEmail.classList.toggle("dark-mode");
 
@@ -48,7 +48,7 @@ function toggleDarkMode() {
     var elementDiv2 = document.getElementById('panel2');
     elementDiv.classList.toggle("dark-mode");
     elementDiv2.classList.toggle("dark-mode");
-    
 
-    
- }
+
+
+}

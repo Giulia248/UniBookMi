@@ -1,18 +1,18 @@
 
 // fetch local JSON
-function fetchJson(){
-    
+function fetchJson() {
+
     fetch('http://127.0.0.1:5500/core/models/NewsModel.json')
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        console.log(data)
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-    });
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data)
+            appendData(data);
+        })
+        .catch(function (err) {
+            console.log('error: ' + err);
+        });
 }
 
 
@@ -20,7 +20,7 @@ function fetchJson(){
 function appendData(data) {
     var mainContainer = document.getElementById("myDiv");
     console.log("------------- lunghezza vv");
-    var size = Object.keys( data.news).length
+    var size = Object.keys(data.news).length
     console.log(size);
     for (var i = 0; i < size; i++) {
 
