@@ -84,3 +84,9 @@ body {
 select{
     width: 100%;
 }
+
+/*Dark mode */
+.dark-mode {
+    background-color: black;
+    color: white;
+  }
