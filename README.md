@@ -23,13 +23,7 @@ Gli utenti registrati (possibilmente con il servizio di sign-on di UNIMI) posson
 - https://www.w3schools.com/xml/ajax_intro.asp AJAX
 - https://www.youtube.com/watch?v=WfCJ3sHnLBM&t=1162s API node.js / express
 
-How to indent in VScode
-On Windows Shift + Alt + F
-On Mac Shift + Option + F
+How to indent in VScode <br />
+On Windows Shift + Alt + F <br />
+On Mac Shift + Option + F <br />
 On Ubuntu Ctrl + Shift + I
-
-
-
-
-
-
