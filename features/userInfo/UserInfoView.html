@@ -29,7 +29,7 @@
     </div>
 
     <!-- USER section -->
-    <div class="container rounded bg-white mt-5 mb-5">
+    <div class="container rounded panel mt-5 mb-5", id="panel1">
         <div class="row">
 
             <!-- User general info + pic -->
@@ -37,7 +37,7 @@
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
                         width="150px" src="http://127.0.0.1:5500/resources/images/profile pics/RoundProfilePic3.jpeg">
                     <span class="font-weight-bold">Studente</span><span
-                        class="text-black-50">giulia.floris@studenti.unimi.it</span>
+                        class="email", id="email1">giulia.floris@studenti.unimi.it</span>
                 </div>
             </div>
 
@@ -100,21 +100,21 @@
     </div>
 
     <!-- SETTINGS -->
-    <div class="container rounded bg-white mt-5 mb-5">
+    <div class="container rounded mt-5 mb-5 panel", id="panel2">
         <div class="row">
             <!-- settings icon + mail -->
             <div class="col-md-3 border-right">
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
                         width="150px" src="http://127.0.0.1:5500/resources/images/settingsIcon.png">
                     <span class="font-weight-bold">Settings</span><span
-                        class="text-black-50">giulia.floris@studenti.unimi.it</span>
+                        class="email", id="email2">giulia.floris@studenti.unimi.it</span>
                 </div>
             </div>
 
             <!-- Profile info -->
             <div class="col-md-5">
                 <!-- Dark mode toggle -->
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Toggle Dark
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button", onclick="toggleDarkMode()">Toggle Dark
                         mode</button></div>
             </div>
         </div>

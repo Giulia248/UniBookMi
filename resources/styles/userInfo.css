@@ -85,8 +85,20 @@ select{
     width: 100%;
 }
 
+.panel{
+    background-color: white;
+    transition: background-color 2s;
+}
+
+.email{
+    background-color: white;
+    color:rgba(0,0,0,.5);
+    transition: background-color 2s;
+}
+
 /*Dark mode */
 .dark-mode {
     background-color: black;
     color: white;
+    transition: background-color 2s;
   }
