@@ -1,0 +1,36 @@
+[
+
+
+    {
+        "departmentName" : "Cyber security",
+        "address" : "Via Celoria"
+    },
+    {
+        "departmentName" : "Computer sciences",
+        "address" : "Via Celoria"
+    },
+    {
+        "departmentName" : "Cultural heritage: sciences, technologies and diagnostics",
+        "address" : "Via Saldini"
+    },
+    {
+        "departmentName" : "Industrial chemistry",
+        "address" : "Via Golgi"
+    },
+    {
+        "departmentName" : "Physics",
+        "address" : "Via Celoria"
+    },
+    {
+        "departmentName" : "Geology",
+        "address" : "Via Golgi"
+    },
+    {
+        "departmentName" : "Environmental science and policy",
+        "address" : "Via Golgi"
+    },
+    {
+        "departmentName" : "",
+        "address" : ""
+    }
+]
