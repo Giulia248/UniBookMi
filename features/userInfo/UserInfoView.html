@@ -1,118 +1,136 @@
+<!DOCTYPE html>
+<html>
 
-        <!DOCTYPE html>
-        <html>
+<!-- HTML header contains title, icon, css link and js link -->
 
-        <!-- HTML header contains title, icon, css link and js link -->
+<!-- http://127.0.0.1:5500/ -->
 
-        <!-- http://127.0.0.1:5500/ -->
+<head>
+    <title>UniBookMi</title>
+    <link rel="icon" type="image/x-icon" href="http://127.0.0.1:5500/resources/icons/faviconUni.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/resources/styles/userInfo.css">
 
-        <head>
-        <title>UniBookMi</title>
-        <link rel="icon" type="image/x-icon" href="http://127.0.0.1:5500/resources/icons/faviconUni.ico">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="http://127.0.0.1:5500/resources/styles/userInfo.css">
-        
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        
-        
-        </head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 
-        <body>
 
-            <div style="background-color: white; width: 100%;height:100px;">
-                <a href="http://127.0.0.1:5500/features/login/login.html"><img src="http://127.0.0.1:5500/resources/images/logoOrizzontale.jpg" alt="HTML tutorial" style="width: 300px;height:100px; float: left;"></a>
-                
-            </div>
-            
-            <!-- USER section -->
-            <div class="container rounded bg-white mt-5 mb-5">
-            <div class="row">
+</head>
 
-                <!-- User general info + pic -->
-                <div class="col-md-3 border-right">
-                    <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="http://127.0.0.1:5500/resources/images/profile pics/RoundProfilePic3.jpeg">
-                        <span class="font-weight-bold">Studente</span><span class="text-black-50">giulia.floris@studenti.unimi.it</span></div>
+<body>
+
+    <div style="background-color: white; width: 100%;height:100px;">
+        <a href="http://127.0.0.1:5500/features/login/login.html"><img
+                src="http://127.0.0.1:5500/resources/images/logoOrizzontale.jpg" alt="HTML tutorial"
+                style="width: 300px;height:100px; float: left;"></a>
+
+    </div>
+
+    <!-- USER section -->
+    <div class="container rounded bg-white mt-5 mb-5">
+        <div class="row">
+
+            <!-- User general info + pic -->
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
+                        width="150px" src="http://127.0.0.1:5500/resources/images/profile pics/RoundProfilePic3.jpeg">
+                    <span class="font-weight-bold">Studente</span><span
+                        class="text-black-50">giulia.floris@studenti.unimi.it</span>
                 </div>
+            </div>
 
-                <!-- Profile info -->
-                <div class="col-md-5 border-right">
-                    <div class="p-3 py-5">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h4 class="text-right">Profile Settings</h4>
-                        </div>
+            <!-- Profile info -->
+            <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Profile Settings</h4>
+                    </div>
 
-                        <!-- User name and surname -->
-                        <div class="row mt-2">
-                            <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value=""></div>
-                            <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname"></div>
-                        </div>
+                    <!-- User name and surname -->
+                    <div class="row mt-2">
+                        <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control"
+                                placeholder="first name" value=""></div>
+                        <div class="col-md-6"><label class="labels">Surname</label><input type="text"
+                                class="form-control" value="" placeholder="surname"></div>
+                    </div>
 
-                        <!-- User mobile phone -->
-                        <div class="row mt-3">
-                            <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
-                        </div>
+                    <!-- User mobile phone -->
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text"
+                                class="form-control" placeholder="enter phone number" value=""></div>
+                    </div>
 
-                        <!-- User departmemts and year -->
-                        <div class="row mt-3">
-                            <div class="col-md-8"><label class="labels">Department</label><form action="#">
+                    <!-- User departmemts and year -->
+                    <div class="row mt-3">
+                        <div class="col-md-8"><label class="labels">Department</label>
+                            <form action="#">
                                 <select name="Departments" id="departmentSelect">
                                 </select>
-                        </form>
+                            </form>
                         </div>
-                        <div class="col-md-2"><label class="labels">Year</label><form action="#">
-                            <select name="year" id="yearSelect">
-                                <option value="red">1</option>
-                                <option value="red">2</option>
-                                <option value="red">3</option>
-                            </select>
-                    </form>
-                    </div>
-                        </div>
-                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-3 py-5">
-                        <div class="d-flex justify-content-between align-items-center experience"><span class="border px-3 p-1 add-reservation"><i class="fa fa-plus"></i>&nbsp; Modify reservations </span></div><br>
-                        <div class='square-box-reservation'>
-                            <div class='square-content-reservation'><div><span>List...</span></div></div>
+                        <div class="col-md-2"><label class="labels">Year</label>
+                            <form action="#">
+                                <select name="year" id="yearSelect">
+                                    <option value="red">1</option>
+                                    <option value="red">2</option>
+                                    <option value="red">3</option>
+                                </select>
+                            </form>
                         </div>
                     </div>
+                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save
+                            Profile</button></div>
                 </div>
             </div>
-            </div>
-
-            <!-- SETTINGS -->
-            <div class="container rounded bg-white mt-5 mb-5">
-                <div class="row">
-                 <!-- settings icon + mail -->
-                 <div class="col-md-3 border-right">
-                    <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="http://127.0.0.1:5500/resources/images/settingsIcon.png">
-                        <span class="font-weight-bold">Settings</span><span class="text-black-50">giulia.floris@studenti.unimi.it</span></div>
+            <div class="col-md-4">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center experience"><span
+                            class="border px-3 p-1 add-reservation"><i class="fa fa-plus"></i>&nbsp; Modify reservations
+                        </span></div><br>
+                    <div class='square-box-reservation'>
+                        <div class='square-content-reservation'>
+                            <div><span>List...</span></div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </div>
 
-               <!-- Profile info -->
-               <div class="col-md-5">
-                    <!-- Dark mode toggle -->
-                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Toggle Dark mode</button></div>
-               </div>
+    <!-- SETTINGS -->
+    <div class="container rounded bg-white mt-5 mb-5">
+        <div class="row">
+            <!-- settings icon + mail -->
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
+                        width="150px" src="http://127.0.0.1:5500/resources/images/settingsIcon.png">
+                    <span class="font-weight-bold">Settings</span><span
+                        class="text-black-50">giulia.floris@studenti.unimi.it</span>
                 </div>
-            </div> 
-
-
-
-                       
-            </div>
-            </div>
             </div>
 
+            <!-- Profile info -->
+            <div class="col-md-5">
+                <!-- Dark mode toggle -->
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Toggle Dark
+                        mode</button></div>
+            </div>
+        </div>
+    </div>
 
-            <!-- User script fetch departments -->
-            <script src="http://127.0.0.1:5500/features/userInfo/userInfoScript.js"></script>
-            <script> fetchJson()</script>
-        </body>
-        </html>
 
 
 
+    </div>
+    </div>
+    </div>
 
+
+    <!-- User script fetch departments -->
+    <script src="http://127.0.0.1:5500/features/userInfo/userInfoScript.js"></script>
+    <script> fetchJson()</script>
+</body>
+
+</html>
