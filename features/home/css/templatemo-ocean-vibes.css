@@ -54,9 +54,9 @@ div { box-sizing: border-box;}
 .tm-mb-80 { margin-bottom: 80px; }
 .tm-text-center { text-align: center; }
 .tm-text-right { text-align: right; }
-.tm-color-primary { color: #309AFD; }
-.tm-color-gray { color: #666768; }
-.tm-color-gray-2 { color: #98999A; }
+.tm-color-primary { color: #002db3; }
+.tm-color-gray { color: rgba(0, 0, 0, .5); }
+.tm-color-gray-2 { color: rgba(0, 0, 0, .5); }
 .tm-color-light-gray { color: #9E9FA0; }
 .tm-bg-white { background-color: #FFF; }
 .tm-bg-gray { background-color: #F1F2F3; }
