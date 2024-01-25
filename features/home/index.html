@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    <link rel="icon" type="image/x-icon" href="http://127.0.0.1:5500/resources/icons/faviconUni.ico">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/resources/styles/main.css">
+
+</head>
+
+<body>
+    <header class="tm-site-header">
+        <h1 class="tm-mt-0 tm-mb-15"><span class="tm-color-primary">UniBookMi</span> <span
+                class="tm-color-gray-2">Home Page</span></h1>
+        <em class="tm-tagline tm-color-light-gray">reservations</em>
+    </header>
+
+    <!-- Video banner 400 px height -->
+    <div id="tm-video-container">
+        <video autoplay muted loop id="tm-video">
+            <source src="video/uniVideo.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="tm-container">
+        <nav class="tm-main-nav">
+            <ul id="inline-popups">
+                <li class="tm-nav-item">
+                    <a data-effect="mfp-move-from-top" class="tm-nav-link", id="goToUserInfo">
+                        User
+                        <i class="fas fa-3x fa-water"></i>
+                    </a>
+                </li>
+                <li class="tm-nav-item">
+                    <a href="#gallery" data-effect="mfp-move-from-top" class="tm-nav-link" id="tm-gallery-link">
+                        Reservations
+                        <i class="far fa-3x fa-images"></i>
+                    </a>
+                </li>
+                <li class="tm-nav-item">
+                    <a data-effect="mfp-move-from-top" class="tm-nav-link", id="goToNews">
+                        News
+                        <i class="far fa-3x fa-smile"></i>
+                    </a>
+                </li>
+
+                <li class="tm-nav-item">
+                    <a href="#contact" data-effect="mfp-move-from-top" class="tm-nav-link">
+                        Contact
+                        <i class="far fa-3x fa-comments"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="http://127.0.0.1:5500/features/home/mainScript.js"></script>
+</body>
+
+</html>
