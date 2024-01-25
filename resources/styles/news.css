@@ -46,6 +46,7 @@ h1, h2, h3, h4{
 
 #img{
     width: 25%;
+    max-width: 250px;
     float: left;    
     margin: 0 15px 0 0;
 }
