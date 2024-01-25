@@ -102,8 +102,7 @@ a.active {
 
 .tm-container {
     max-width: 1254px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 15%;
     margin: 0 auto 135px;
 }
 
