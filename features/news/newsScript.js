@@ -2,7 +2,7 @@
 // fetch local JSON
 function fetchJson() {
 
-    fetch('http://127.0.0.1:5500/core/models/NewsModel.json')
+    fetch('https://unibookmi.altervista.org/core/models/NewsModel.json')
         .then(function (response) {
             return response.json();
         })
