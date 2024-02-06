@@ -1,0 +1,9 @@
+
+ID: INT (primary key)
+Name: STRING
+Surname: STRING
+IDreservations: INT (foreing key)
+MobileNumber: INT
+Department: STRING
+Year: INT (1 - 3)
+DarkMode: BOOL
