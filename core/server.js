@@ -3,7 +3,7 @@ const http = require('http');
 
 // Define the hostname and port number
 const hostname = '127.0.0.1';
-const port = 3306;
+const port = 3000;
 
 // Create a server instance using the http.createServer() method
 const server = http.createServer((req, res) => {

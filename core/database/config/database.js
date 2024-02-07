@@ -1,4 +1,8 @@
 var mysql = require('mysql');
+const express = require('express');
+const app = express();
+
+app.use(express.static('core/api'));
 
 var con = mysql.createConnection({
     host: "127.0.0.1",
@@ -11,7 +15,9 @@ con.connect(function(err) {
   console.log("DB connected !");
 });
 
-            
+module.exports = pool;
+
+
 
 /*
 
