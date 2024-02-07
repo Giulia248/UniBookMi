@@ -22,7 +22,8 @@ app.use(express.static(path.join(__dirname, 'features')));
 var con = mysql.createConnection({
     host: "127.0.0.1",
     user: "root",
-    password: "Paolo2002-"
+    password: "Paolo2002-",
+    database: 'unibookmi' 
 });
 
 con.connect(err => {
@@ -45,7 +46,7 @@ app.get('/', (req, res) => {
     app.post('/addUser', (req, res) => {
 
         const { email, nome, password } = req.body;
-        var sql = "INSERT INTO customers (email, nome, password) VALUES (?, ?, ?)";
+        var sql = "INSERT INTO utentii (email, nome, password) VALUES (?, ?, ?)";
 
         con.query(sql, [email, nome, password], (err, result) => {
             if (err) {
