@@ -47,16 +47,25 @@ app.get('/', (req, res) => {
 
         const { email, nome, password } = req.body;
         var sql = "INSERT INTO utentii (email, nome, password) VALUES (?, ?, ?)";
-
-        con.query(sql, [email, nome, password], (err, result) => {
+        bcrypt.hash(password, 10, (err, hash) => {
             if (err) {
-                console.error('Error executing INSERT query:', err);
-                res.status(500).send('Error executing INSERT query');
+                console.error('Error hashing password:', err);
                 return;
             }
-            console.log('INSERT query successful');
-            res.send('INSERT query successful');
+            console.log('Hashed password:', hash);
+            con.query(sql, [email, nome, hash], (err, result) => {
+                if (err) {
+                    console.error('Error executing INSERT query:', err);
+                    res.status(500).send('Error executing INSERT query:');
+                    return;
+                }else{
+                    console.log('INSERT query successful');
+                }
+                
+            });
         });
+
+
     });
 
 
