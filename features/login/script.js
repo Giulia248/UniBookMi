@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.location.href = 'http://127.0.0.1:5500/features/home/index.html';
                 return data.json();
     });
-
+});
 
     // LOG IN --------------------------------------------------------------------
     loginBtn.addEventListener('click', () => {
