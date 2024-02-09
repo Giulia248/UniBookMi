@@ -19,11 +19,11 @@
 
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form action="http://localhost:3000/addUser" method="post">
+            <form id="formRegister" >
                 <h1>Create Account</h1>
-                <input type="text" placeholder="Name" name="nome">
-                <input type="email" placeholder="Email" name="email">
-                <input type="password" placeholder="Password" name="password">
+                <input type="text" placeholder="Name" name="nome", id="nomeRegistration">
+                <input type="email" placeholder="Email" name="email", id="emailRegistration">
+                <input type="password" placeholder="Password" name="password", id="passwordRegistration">
                 <button type="submit" id="signUp">Sign Up</button>
             </form>
         </div>
@@ -56,40 +56,6 @@
     
     <div>
         <script src="http://127.0.0.1:5500/features/login/script.js"></script>
-        <script>
-        // Add an event listener to the form submission
-        document.querySelector('form').addEventListener('submit', async (e) => {
-            e.preventDefault(); // Prevent the default form submission
-
-            const form = e.target;
-            const formData = new FormData(form);
-            console.log("trapezio")
-
-            try {
-                // Send the POST request to the server
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData
-                });
-
-                if (response.ok) {
-                    // Handle successful response
-                    alert('User added successfully');
-                } else {
-                    // Handle error response
-                    alert('Failed to add user');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('An error occurred');
-            }
-        });
-
-        </script>
-
-    </script>
-
-
     </div>
 </body>
 

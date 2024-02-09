@@ -15,6 +15,8 @@ const port = process.env.PORT || 3000;
 // Middleware to parse incoming request bodies
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.json())
+
 // Serve the HTML file from the public folder
 app.use(express.static(path.join(__dirname, 'features')));
 
@@ -35,16 +37,10 @@ con.connect(err => {
 });
 
 
-// Define a route handler for the root URL ("/")
-app.get('/', (req, res) => {
-    // Send the login.html file as the response
-    res.sendFile(path.join(__dirname, 'login.html'));
-});
-
-
     // Define a route to handle the INSERT query
     app.post('/addUser', (req, res) => {
 
+        console.log("POST BODY -> ", req.body)
         const { email, nome, password } = req.body;
         var sql = "INSERT INTO utentii (email, nome, password) VALUES (?, ?, ?)";
         bcrypt.hash(password, 10, (err, hash) => {
