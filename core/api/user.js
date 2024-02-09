@@ -38,7 +38,7 @@ app.listen(port, () => {
 
 
 
-    // Define a route to handle the INSERT query
+    // POST add user service
     app.post('/addUser', (req, res) => {
 
         console.log("⚡⚡POST BODY -> ", req.body)
