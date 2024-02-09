@@ -1,7 +1,6 @@
 const mysql = require('mysql');
 const bcrypt = require('bcrypt');
 const express = require('express');
-const path = require('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
@@ -17,10 +16,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.json())
 
-// Serve the HTML file from the public folder
-app.use(express.static(path.join(__dirname, 'features')));
-
-
 var con = mysql.createConnection({
     host: "127.0.0.1",
     user: "root",
@@ -33,14 +28,20 @@ con.connect(err => {
         console.error('Error connecting to MySQL database:', err);
         return;
     }
-    console.log('Connected to MySQL database');
+    console.log('⚡⚡Connected to MySQL database');
 });
+
+
+app.listen(port, () => {
+    console.log(`⚡⚡Server is running on http://localhost:${port}`);
+  });
+
 
 
     // Define a route to handle the INSERT query
     app.post('/addUser', (req, res) => {
 
-        console.log("POST BODY -> ", req.body)
+        console.log("⚡⚡POST BODY -> ", req.body)
         const { email, nome, password } = req.body;
         var sql = "INSERT INTO utentii (email, nome, password) VALUES (?, ?, ?)";
         bcrypt.hash(password, 10, (err, hash) => {
@@ -51,11 +52,12 @@ con.connect(err => {
             console.log('Hashed password:', hash);
             con.query(sql, [email, nome, hash], (err, result) => {
                 if (err) {
-                    console.error('Error executing INSERT query:', err);
+                    console.error('💀💀Error executing INSERT query:', err);
                     res.status(500).send('Error executing INSERT query:');
                     return;
                 }else{
-                    console.log('INSERT query successful');
+                    res.status(200).json({ message: 'Insert successful' });
+                    console.log('🩵🩵INSERT query successful');
                 }
                 
             });
@@ -64,7 +66,3 @@ con.connect(err => {
 
     });
 
-
-    app.listen(port, () => {
-        console.log(`Server is running on http://localhost:${port}`);
-      });

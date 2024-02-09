@@ -52,9 +52,6 @@ document.addEventListener('DOMContentLoaded', function () {
             password: document.getElementById("passwordRegistration").value
         };
 
-        console.log("form data-> ", formData);
-        console.log("form data stringify -> ", JSON.stringify(formData));
-
         const options = {
             method: 'POST',
             headers: {
@@ -66,19 +63,11 @@ document.addEventListener('DOMContentLoaded', function () {
         fetch('http://localhost:3000/addUser', options)
             .then(data => {
                 if (!data.ok) {
-                    throw Error(data.status);
                     alert("Errore nella registrazione");
-                }
-                alert("AOOOO");
+                    throw Error(data.status);
+                };
                 window.location.href = 'http://127.0.0.1:5500/features/home/index.html';
                 return data.json();
-
-            }).then(update => {
-                console.log("UPDATE ->", update);
-            }).catch(e => {
-                console.log("ERROR UPDATE ->", e);
-            });
-
     });
 
 
