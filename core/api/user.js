@@ -1,4 +1,4 @@
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const bcrypt = require('bcrypt');
 const express = require('express');
 const cors = require('cors');
@@ -59,7 +59,6 @@ app.listen(port, () => {
                     res.status(200).json({ message: 'Insert successful' });
                     console.log('🩵🩵INSERT query successful');
                 }
-                
             });
         });
 
