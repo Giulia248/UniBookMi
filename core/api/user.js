@@ -20,7 +20,7 @@ var con = mysql.createConnection({
     host: "127.0.0.1",
     user: "root",
     password: "Paolo2002-",
-    database: 'unibookmi' 
+    database: 'unibookmi'
 });
 
 con.connect(err => {
@@ -34,34 +34,66 @@ con.connect(err => {
 
 app.listen(port, () => {
     console.log(`⚡⚡Server is running on http://localhost:${port}`);
-  });
+});
 
 
 
-    // POST add user service
-    app.post('/addUser', (req, res) => {
+// POST add user service
+app.post('/addUser', (req, res) => {
 
-        console.log("⚡⚡POST BODY -> ", req.body)
-        const { email, nome, password } = req.body;
-        var sql = "INSERT INTO utentii (email, nome, password) VALUES (?, ?, ?)";
-        bcrypt.hash(password, 10, (err, hash) => {
+    console.log("⚡⚡POST BODY -> ", req.body)
+    const { email, nome, password } = req.body;
+    var sql = "INSERT INTO utentii (email, nome, password) VALUES (?, ?, ?)";
+    bcrypt.hash(password, 10, (err, hash) => {
+        if (err) {
+            console.error('Error hashing password:', err);
+            return;
+        }
+        console.log('Hashed password:', hash);
+        con.query(sql, [email, nome, hash], (err, result) => {
             if (err) {
-                console.error('Error hashing password:', err);
+                console.error('💀💀Error executing INSERT query:', err);
+                res.status(500).send('Error executing INSERT query:');
                 return;
+            } else {
+                res.status(200).json({ message: 'Insert successful' });
+                console.log('🩵🩵INSERT query successful');
             }
-            console.log('Hashed password:', hash);
-            con.query(sql, [email, nome, hash], (err, result) => {
-                if (err) {
-                    console.error('💀💀Error executing INSERT query:', err);
-                    res.status(500).send('Error executing INSERT query:');
+        });
+    });
+
+    // GET user service
+    app.get('/getUser', (req, res) => {
+        const { email, password } = req.body;
+        const sql = `SELECT * FROM users WHERE email = ${email}`;
+        db.query(sql, (err, result) => {
+          if (err) {
+
+            console.error('💀💀Error executing SELECT query:', err);
+            res.status(500).send('Error executing SELECT query:');
+            alert("Errore nel login");
+            throw err;
+          }else{
+
+            bcrypt.hash(password, 10, (err, hash) => {
+
+                if (hash == password ){
+
+                    res.status(200).json({ message: 'SELECT successful' });
+                }else if (err){
+                    console.error('Error with matching password:', err);
+                    alert("Password errata");
                     return;
-                }else{
-                    res.status(200).json({ message: 'Insert successful' });
-                    console.log('🩵🩵INSERT query successful');
                 }
             });
+            
+            res.status(200).json({ message: 'GET successful' });
+            console.log('🩵🩵SELECT query successful');
+          };
         });
+      });
 
 
-    });
+
+});
 

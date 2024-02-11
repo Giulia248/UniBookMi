@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    
+
     // REGISTER
     registerBtn.addEventListener('click', () => {
 
@@ -46,11 +46,14 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         };
 
+
+
         var formData = {
             email: document.getElementById("emailRegistration").value,
             nome: document.getElementById("nomeRegistration").value,
             password: document.getElementById("passwordRegistration").value
         };
+
 
         const options = {
             method: 'POST',
@@ -68,8 +71,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 };
                 window.location.href = 'http://127.0.0.1:5500/features/home/index.html';
                 return data.json();
+            });
     });
-});
 
     // LOG IN --------------------------------------------------------------------
     loginBtn.addEventListener('click', () => {
@@ -96,6 +99,30 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+
+
+        var formData = {
+            email: document.getElementById("emailLogin").value,
+            password: document.getElementById("passwordLogin").value
+        };
+
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+
+        };
+        fetch('http://localhost:3000/getUser', options)
+            .then(data => {
+                if (!data.ok) {
+                    alert("Errore nella registrazione");
+                    throw Error(data.status);
+                };
+                window.location.href = 'http://127.0.0.1:5500/features/home/index.html';
+                return data.json();
+            });
 
     });
 });
