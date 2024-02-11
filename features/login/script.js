@@ -99,30 +99,33 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-
-
-        var formData = {
-            email: document.getElementById("emailLogin").value,
-            password: document.getElementById("passwordLogin").value
-        };
+            email =  document.getElementById("emailLogin").value,
+            password = document.getElementById("passwordLogin").value
 
         const options = {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-
+            }
         };
-        fetch('http://localhost:3000/getUser', options)
-            .then(data => {
-                if (!data.ok) {
-                    alert("Errore nella registrazione");
-                    throw Error(data.status);
-                };
-                window.location.href = 'http://127.0.0.1:5500/features/home/index.html';
-                return data.json();
-            });
+        fetch(`http://localhost:3000/getUser?email=${email}&password=${password}`, options)
+        .then(response => {
+            if (!response.ok) {
 
+                if (response.status == 401){
+                    alert("password errata");
+                    return;
+                }else{
+                    alert("Errore , ", response.status);
+                    return;
+                }
+            }else{
+                window.location.href = 'http://127.0.0.1:5500/features/home/index.html';
+            }
+           
+          })
+          .catch(error => {
+            console.error('There was a problem with your fetch operation:', error);
+          });
     });
 });

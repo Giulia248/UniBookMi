@@ -61,39 +61,36 @@ app.post('/addUser', (req, res) => {
             }
         });
     });
+});
 
-    // GET user service
-    app.get('/getUser', (req, res) => {
-        const { email, password } = req.body;
-        const sql = `SELECT * FROM users WHERE email = ${email}`;
-        db.query(sql, (err, result) => {
-          if (err) {
 
+// GET user service
+app.get('/getUser', (req, res) => {
+    const email = req.query.email;
+    const password = req.query.password;
+
+    const sql = `SELECT * FROM utentii WHERE email = ?`;
+    con.query(sql, [email], (err, result) => {
+        if (err) {
             console.error('💀💀Error executing SELECT query:', err);
-            res.status(500).send('Error executing SELECT query:');
-            alert("Errore nel login");
+            res.status(500).json({ message: 'Email non valida o non registrata' });
             throw err;
-          }else{
-
-            bcrypt.hash(password, 10, (err, hash) => {
-
-                if (hash == password ){
-
-                    res.status(200).json({ message: 'SELECT successful' });
-                }else if (err){
-                    console.error('Error with matching password:', err);
-                    alert("Password errata");
-                    return;
+        } else {
+            console.log('🩵🩵 SELECT query successful');
+            const passwordUser = result[0].password;
+            bcrypt.compare(password, passwordUser)
+              .then(isMatch => {
+                if (isMatch) {
+                  return res.status(200).json({ message: 'Login successful' });
+                } else {
+                  return res.status(401).json({ message: 'Invalid password' });
                 }
-            });
-            
-            res.status(200).json({ message: 'GET successful' });
-            console.log('🩵🩵SELECT query successful');
-          };
-        });
-      });
-
-
-
+              })
+              .catch(error => {
+                console.error('Error:', error);
+                return res.status(500).json({ message: 'Internal Server Error' });
+              });
+        };
+    });
 });
 
