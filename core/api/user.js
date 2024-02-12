@@ -94,3 +94,44 @@ app.get('/getUser', (req, res) => {
     });
 });
 
+
+
+// Reservations --------------------------------------------------------------------
+
+
+// GET all reservations
+app.get('/getReservations', (req, res) => {
+
+    const email = req.query.email;
+
+    const sql = `SELECT * FROM reservations WHERE email = ?`;
+    con.query(sql, [email], (err, result) => {
+        if (err) {
+            console.error('💀💀Error executing SELECT query:', err);
+            res.status(500).json({ message: `Nessuna prenotazione con email ${email}` });
+            throw err;
+        } else {
+            res.status(200).json({ date: result.body.date, address: result.body.address, roomId: result.body.roomId });
+            console.log('🩵🩵 SELECT query successful');
+        };
+    });
+});
+
+
+// POST add reservation service
+app.post('/addReservation', (req, res) => {
+
+    console.log("⚡⚡POST BODY -> ", req.body)
+    const { email, date, address, roomId } = req.body;
+    var sql = "INSERT INTO utentii (email, date, address, roomId) VALUES (?, ?, ?, ?)";
+        con.query(sql, [email, date, address, roomId], (err, result) => {
+            if (err) {
+                console.error('💀💀Error executing INSERT query:', err);
+                res.status(500).send('Error executing INSERT query:');
+                return;
+            } else {
+                res.status(200).json({ message: 'Insert successful' });
+                console.log('🩵🩵INSERT query successful');
+            }
+        });
+});
