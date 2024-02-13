@@ -135,3 +135,21 @@ app.post('/addReservation', (req, res) => {
             }
         });
 });
+
+// DELETE reservation
+app.post('/addReservation', (req, res) => {
+
+    console.log("⚡⚡ DELETE BODY -> ", req.body)
+    const { idReservation } = req.body;
+    const sql = 'DELETE FROM users WHERE id = ?';
+        con.query(sql, [idReservation], (err, result) => {
+            if (err) {
+                console.error('💀💀Error executing DELETE query:', err);
+                res.status(500).send('Error executing DELETE query:');
+                return;
+            } else {
+                res.status(200).json({ message: 'DELETE successful' });
+                console.log('🩵🩵 DELETE query successful');
+            }
+        });
+});
