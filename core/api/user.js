@@ -95,6 +95,25 @@ app.get('/getUser', (req, res) => {
 });
 
 
+// POST modify user service
+app.post('/modifyUser', (req, res) => {
+
+    console.log("⚡⚡ POST BODY -> ", req.body);
+    const { email, nome, newEmail } = req.body;
+    const sql = 'UPDATE users SET name = ?, newEmail = ? WHERE email = ?';
+        con.query(sql, [email, nome, hash], (err, result) => {
+            if (err) {
+                console.error('💀💀Error executing UPDATE query:', err);
+                res.status(500).send('Error executing UPDATE query:');
+                return;
+            } else {
+                res.status(200).json({ message: 'Insert successful' });
+                console.log('🩵🩵 UPDATE query successful');
+            }
+        });
+});
+
+
 
 // Reservations --------------------------------------------------------------------
 
