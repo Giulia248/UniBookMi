@@ -23,6 +23,11 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("signUp").addEventListener("click", function (event) {
         event.preventDefault();
 
+        // just for test
+        window.location.href = 'http://127.0.0.1:5500/features/home/index.html';
+        return;
+        //
+
         // Validazione campi di input
         const nameInput = document.querySelector('.sign-up input[placeholder="Name"]');
         const emailInput = document.querySelector('.sign-up input[placeholder="Email"]');
@@ -82,6 +87,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById("signIn").addEventListener("click", function (event) {
         event.preventDefault();
+
+        // just for test
+        window.location.href = 'http://127.0.0.1:5500/features/home/index.html';
+        return;
+        //
 
         // Validazione campi di input
         const emailInput = document.querySelector('.sign-in input[placeholder="Email"]');
