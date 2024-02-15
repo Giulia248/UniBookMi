@@ -156,7 +156,7 @@ app.post('/addReservation', (req, res) => {
 });
 
 // DELETE reservation
-app.post('/addReservation', (req, res) => {
+app.post('/deleteReservation', (req, res) => {
 
     console.log("⚡⚡ DELETE BODY -> ", req.body)
     const { idReservation } = req.body;
