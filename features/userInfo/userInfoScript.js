@@ -1,54 +1,139 @@
+// Recupera i dati salvati dal form del profilo dall'archiviazione locale
+const savedProfileData = JSON.parse(localStorage.getItem('profileData'));
 
-// fetch local JSON
-function fetchJson() {
-
-    fetch('http://127.0.0.1:5500/core/models/Departments.json')
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-
-            // nulls and empty objects handling ! 
-            const filteredData = data.filter(data => data.departmentName !== "");
-            console.log(filteredData);
-            appendData(filteredData);
-
-        })
-        .catch(function (err) {
-            console.log('💀ERROR: ' + err);
-        });
+// Verifica se ci sono dati salvati
+if (savedProfileData) {
+    // Aggiorna i valori nel riquadro delle informazioni fisse
+    document.getElementById('tipodiCorso').innerText = savedProfileData.tipodiCorso || '-';
+    document.getElementById('corso').innerText = savedProfileData.corso || '-';
+    document.getElementById('anno').innerText = savedProfileData.anno || '-';
+    document.getElementById('tipodiiscrizione').innerText = savedProfileData.anno || '-';
+    document.getElementById('matricola').innerText = savedProfileData.anno || '-';
+    document.getElementById('Ultimoaanodiiscrizione').innerText = savedProfileData.anno || '-';
+    document.getElementById('residenza').innerText = savedProfileData.anno || '-';
+    document.getElementById('telefono').innerText = savedProfileData.anno || '-';
+    document.getElementById('recapito').innerText = savedProfileData.anno || '-';
+    document.getElementById('cellulare').innerText = savedProfileData.anno || '-';
+    document.getElementById('email').innerText = savedProfileData.anno || '-';
 }
 
+// SIDEBAR TOGGLE
 
-// add data on html page
-function appendData(data) {
-    var mainContainer = document.getElementById("departmentSelect");
-    var size = Object.keys(data).length;
-    for (var i = 0; i < size; i++) {
+let sidebarOpen = false;
+const sidebar = document.getElementById('sidebar');
 
-        console.log()
-        var opt = document.createElement('option');
-        opt.value = i;
-        opt.innerHTML = data[i].departmentName;
-        mainContainer.appendChild(opt);
-    }
+function openSidebar() {
+  if (!sidebarOpen) {
+    sidebar.classList.add('sidebar-responsive');
+    sidebarOpen = true;
+  }
 }
 
-function toggleDarkMode() {
-
-
-
-    var elementEmail = document.getElementById('email1');
-    elementEmail.classList.toggle("dark-mode");
-
-    var elementEmail2 = document.getElementById('email2');
-    elementEmail2.classList.toggle("dark-mode");
-
-    var elementDiv = document.getElementById('panel1');
-    var elementDiv2 = document.getElementById('panel2');
-    elementDiv.classList.toggle("dark-mode");
-    elementDiv2.classList.toggle("dark-mode");
-
-
-
+function closeSidebar() {
+  if (sidebarOpen) {
+    sidebar.classList.remove('sidebar-responsive');
+    sidebarOpen = false;
+  }
 }
+
+// ---------- CHARTS ----------
+
+// BAR CHART
+const barChartOptions = {
+  series: [
+    {
+      data: [10, 8, 6, 4, 2],
+    },
+  ],
+  chart: {
+    type: 'bar',
+    height: 350,
+    toolbar: {
+      show: false,
+    },
+  },
+  colors: ['#246dec', '#cc3c43', '#367952', '#f5b74f', '#4f35a1'],
+  plotOptions: {
+    bar: {
+      distributed: true,
+      borderRadius: 4,
+      horizontal: false,
+      columnWidth: '40%',
+    },
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  legend: {
+    show: false,
+  },
+  xaxis: {
+    categories: ['Laptop', 'Phone', 'Monitor', 'Headphones', 'Camera'],
+  },
+  yaxis: {
+    title: {
+      text: 'Count',
+    },
+  },
+};
+
+const barChart = new ApexCharts(
+  document.querySelector('#bar-chart'),
+  barChartOptions
+);
+barChart.render();
+
+// AREA CHART
+const areaChartOptions = {
+  series: [
+    {
+      name: 'Purchase Orders',
+      data: [31, 40, 28, 51, 42, 109, 100],
+    },
+    {
+      name: 'Sales Orders',
+      data: [11, 32, 45, 32, 34, 52, 41],
+    },
+  ],
+  chart: {
+    height: 350,
+    type: 'area',
+    toolbar: {
+      show: false,
+    },
+  },
+  colors: ['#4f35a1', '#246dec'],
+  dataLabels: {
+    enabled: false,
+  },
+  stroke: {
+    curve: 'smooth',
+  },
+  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+  markers: {
+    size: 0,
+  },
+  yaxis: [
+    {
+      title: {
+        text: 'Purchase Orders',
+      },
+    },
+    {
+      opposite: true,
+      title: {
+        text: 'Sales Orders',
+      },
+    },
+  ],
+  tooltip: {
+    shared: true,
+    intersect: false,
+  },
+};
+
+const areaChart = new ApexCharts(
+  document.querySelector('#area-chart'),
+  areaChartOptions
+);
+areaChart.render();

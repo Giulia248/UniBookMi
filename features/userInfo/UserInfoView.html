@@ -1,137 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <title>UniBookMi Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="http://127.0.0.1:5500/resources/icons/Logo2.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<!-- HTML header contains title, icon, css link and js link -->
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<!-- http://127.0.0.1:5500/ -->
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 
-<head>
-    <title>UniBookMi</title>
-    <link rel="icon" type="image/x-icon" href="http://127.0.0.1:5500/resources/icons/favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="http://127.0.0.1:5500/resources/styles/userInfo.css">
+  </head>
+  <body>
+    <div class="grid-container">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
 
 
-</head>
-
-<body>
-
-    <div style="background-color: white; width: 100%;height:100px;">
-        <a href="http://127.0.0.1:5500/features/home/index.html"><img
-                src="http://127.0.0.1:5500/resources/images/logoOrizzontale.jpg" alt="HTML tutorial"
-                style="width: 300px;height:100px; float: left;"></a>
-
-    </div>
-
-    <!-- USER section -->
-    <div class="container rounded panel mt-5 mb-5" , id="panel1">
-        <div class="row">
-
-            <!-- User general info + pic -->
-            <div class="col-md-3 border-right">
-                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
-                        width="150px" src="http://127.0.0.1:5500/resources/images/profile pics/RoundProfilePic3.jpeg">
-                    <span class="font-weight-bold">Studente</span><span class="email" ,
-                        id="email1">giulia.floris@studenti.unimi.it</span>
-                </div>
-            </div>
-
-            <!-- Profile info -->
-            <div class="col-md-5 border-right">
-                <div class="p-3 py-5">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="text-right">Profile Settings</h4>
-                    </div>
-
-                    <!-- User name and surname -->
-                    <div class="row mt-2">
-                        <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control"
-                                placeholder="first name" value=""></div>
-                        <div class="col-md-6"><label class="labels">Surname</label><input type="text"
-                                class="form-control" value="" placeholder="surname"></div>
-                    </div>
-
-                    <!-- User mobile phone -->
-                    <div class="row mt-3">
-                        <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text"
-                                class="form-control" placeholder="enter phone number" value=""></div>
-                    </div>
-
-                    <!-- User departmemts and year -->
-                    <div class="row mt-3">
-                        <div class="col-md-8"><label class="labels">Department</label>
-                            <form action="#">
-                                <select name="Departments" id="departmentSelect">
-                                </select>
-                            </form>
-                        </div>
-                        <div class="col-md-2"><label class="labels">Year</label>
-                            <form action="#">
-                                <select name="year" id="yearSelect">
-                                    <option value="red">1</option>
-                                    <option value="red">2</option>
-                                    <option value="red">3</option>
-                                </select>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save
-                            Profile</button></div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-3 py-5">
-                    <div class="d-flex justify-content-between align-items-center experience"><span
-                            class="border px-3 p-1 add-reservation"><i class="fa fa-plus"></i>&nbsp; Modify reservations
-                        </span></div><br>
-                    <div class='square-box-reservation'>
-                        <div class='square-content-reservation'>
-                            <div><span>List...</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="sidebar-brand">
+            <span class="material-icons-outlined">inventory</span> UniBookMi Dashboard
+          </div>
+          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
         </div>
-    </div>
 
-    <!-- SETTINGS -->
-    <div class="container rounded mt-5 mb-5 panel" , id="panel2">
-        <div class="row">
-            <!-- settings icon + mail -->
-            <div class="col-md-3 border-right">
-                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
-                        width="150px" src="http://127.0.0.1:5500/resources/images/settingsIcon.png">
-                    <span class="font-weight-bold">Settings</span><span class="email" ,
-                        id="email2">giulia.floris@studenti.unimi.it</span>
-                </div>
-            </div>
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <a href="http://127.0.0.1:5500/features/userInfo/UserInfoView.html">
+              <span class="material-icons-outlined">dashboard</span> Dashboard
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="http://127.0.0.1:5500/features/home/index.html">
+              <span class="material-icons-outlined">home</span>Homepage
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="http://127.0.0.1:5500/features/reservation/reservation.html">
+              <span class="material-icons-outlined">fact_check</span> Prenotazione Aule
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="http://127.0.0.1:5500/features/userInfo/Mioprofilo.html">
+              <span class="material-icons-outlined">face</span> Mio Profilo
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="http://127.0.0.1:5500/features/login/login.html">
+              <span class="material-icons-outlined">logout</span> Logout
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <!-- End Sidebar -->
 
-            <!-- Profile info -->
-            <div class="col-md-5">
-                <!-- Dark mode toggle -->
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" ,
-                        onclick="toggleDarkMode()">Toggle Dark
-                        mode</button></div>
-            </div>
+      <!-- Main -->
+    <main class="main-container">
+        <div class="main-title">
+          <p class="font-weight-bold">DASHBOARD</p>
         </div>
-    </div>
+        
+        <div class="fixed-info">
+            <h1>I tuoi Dati:</h1>
+            <ul>
+                <li><strong>Tipo di corso:</strong> <span id="tipodiCorso"></span></li>
+                <li><strong>Corso:</strong> <span id="corso"></span></li>
+                <li><strong>Anno:</strong> <span id="anno"></span></li>
+                <li><strong>Tipo di iscrizione:</strong> <span id="tipodiiscrizione"></span></li>
+                <li><strong>Matricola:</strong> <span id="matricola"></span></li>
+                <li><strong>Ultimo anno di iscrizione:</strong> <span id="Ultimoaanodiiscrizione"></span></li>
+                <li><strong>Residenza:</strong> <span id="residenza"></span></li>
+                <li><strong>Telefono:</strong> <span id="telefono"></span></li>
+                <li><strong>Recapito:</strong> <span id="recapito"></span></li>
+                <li><strong>Cellulare:</strong> <span id="cellulare"></span></li>
+                <li><strong>Email:</strong> <span id="email"></span></li>
+            </ul>
+        </div>
+        <div class="fixed-info">
+            <h1>Le tue Aule Prenotate:</h1>
+         <ul>
+            <li><strong>Num. Aula:</strong> <span id="Num.Aula"></span></li>
+            <li><strong>Sede:</strong> <span id="Sede"></span></li>
+            <li><strong>Indirizzo sede:</strong> <span id="Indirizzosede"></span></li>
+            <li><strong>Orario di Prenotazione Aula:</strong> <span id="OrariodiPrenotazioneAula"></span></li>
+         </ul>
+        </div>
+    </main>
+      <!-- End Main -->
 
-
-
-
-    </div>
-    </div>
-    </div>
-
-
-    <!-- User script fetch departments -->
-    <script src="http://127.0.0.1:5500/features/userInfo/userInfoScript.js"></script>
-    <script> fetchJson()</script>
-</body>
-
+        
+    <!-- Scripts -->
+    <!-- ApexCharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+    <!-- Custom JS -->
+    <script src="http://127.0.0.1:5500/features/userInfo/userInfo.js"></script>
+  </body>
 </html>

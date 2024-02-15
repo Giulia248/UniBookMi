@@ -1,66 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
     <title>Home</title>
-    <link rel="icon" type="image/x-icon" href="http://127.0.0.1:5500/resources/icons/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="http://127.0.0.1:5500/resources/icons/logo2.ico">
     <link rel="stylesheet" href="http://127.0.0.1:5500/resources/styles/main.css">
-
+    <link href="https://fonts.google.com/specimen/Kalam?preview.text=Benvenuti!&preview.size=43" rel="stylesheet">
 </head>
 
 <body>
-    <header class="tm-site-header", style="background-color: white;">
-        <h1 class="tm-mt-0 tm-mb-15"><span class="tm-color-primary">UniBookMi</span> <span class="tm-color-gray-2">Home
-                Page</span></h1>
-        <em class="tm-tagline tm-color-light-gray">reservations</em>
+    <header class="tm-site-header">
+        <div class="tm-header-container">
+            <h1 class="tm-mt-0 tm-mb-15">
+                <span class="tm-color-primary">UniBookMi</span> 
+                <span class="tm-color-gray-2">|Home Page</span>
+            </h1>
+            <h2
+                class="booking-text"</p>Benvenuti !</p>Assicurati il tuo spazio <p></p>d'apprendimento preferito !
+                    <h2><a href="http://127.0.0.1:5500/features/reservation/reservation.html" class="tm-btn tm-btn-primary">Prenota Qui !</a></h2>
+            </h2>
+            </h2>
+        </div>
     </header>
 
-
+    <!-- Video banner 100% width and height -->
     <div id="tm-video-container">
         <video autoplay muted loop id="tm-video">
-            <source src="video/uniVideo.mp4" type="video/mp4">
+            <source src="video/univideo2.mp4" type="video/mp4">
         </video>
     </div>
-    <div class="tm-container">
-        <nav class="tm-main-nav">
-            <ul id="inline-popups">
 
-                <!-- USER -->
-                <li class="tm-nav-item">
-                    <a data-effect="mfp-move-from-top" class="tm-nav-link" , id="goToUserInfo">
-                        User
-                        <img src="http://127.0.0.1:5500/resources/icons/home/userIcon.png" alt="", style="width: 70%">
-                    </a>
-                </li>
-
-                <!-- RESERVATIONS -->
-                <li class="tm-nav-item">
-                    <a data-effect="mfp-move-from-top" class="tm-nav-link" id="tm-gallery-link">
-                        Reservations
-                        <img src="http://127.0.0.1:5500/resources/icons/home/reservationIcon.png" alt="", style="width: 70%;">
-                    </a>
-                </li>
-
-                <!-- NEWS -->
-                <li class="tm-nav-item">
-                    <a data-effect="mfp-move-from-top" class="tm-nav-link" , id="goToNews">
-                        News
-                        <img src="http://127.0.0.1:5500/resources/icons/home/newsIcon.png" alt="", style="width: 70%;">
-                    </a>
-                </li>
-
-                <!-- CONTACTS -->
-                <li class="tm-nav-item">
-                    <a data-effect="mfp-move-from-top" class="tm-nav-link", id="goToContacts">
-                        Contact
-                        <img src="http://127.0.0.1:5500/resources/icons/home/contactIcon.png" alt="", style="width: 70%;">
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <div class="tm-icons-container">
+        <a href="http://127.0.0.1:5500/features/userInfo/UserInfoView.html" class="tm-icon">DashBoard</a>
+        <a href="http://127.0.0.1:5500/features/news/NewsView.html" class="tm-icon">News</a>
+        <a href="http://127.0.0.1:5500/features/reservation/reservation.html" class="tm-icon">Prenotazioni Aule</a>
+        <a href="http://127.0.0.1:5500/features/contacts/Contacts.html" class="tm-icon">Contatti</a>
+        <a href="http://127.0.0.1:5500/features/login/login.html" class="tm-icon">Logout</a>
     </div>
 
     <script src="http://127.0.0.1:5500/features/home/mainScript.js"></script>
 </body>
-
 </html>
+
+<style>
+    .booking-text {
+        font-family:"kalam", cursive;
+    }
+</style>
