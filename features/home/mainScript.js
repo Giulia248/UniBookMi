@@ -12,12 +12,12 @@ document.getElementById("goToNews").addEventListener("click", function (event) {
 
 });
 
-
-
-// goto news
-document.getElementById("goToContacts").addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent the default form submission
-    window.location.href = 'http://127.0.0.1:5500/features/contacts/Contacts.html';
-
+document.querySelectorAll('.tm-icon').forEach(function(icon) {
+    icon.addEventListener('click', function(event) {
+        var targetUrl = icon.getAttribute('data-href');
+        if (targetUrl) {
+            window.location.href = targetUrl;
+        }
+    });
 });
 

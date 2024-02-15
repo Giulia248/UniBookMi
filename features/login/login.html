@@ -7,46 +7,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="http://127.0.0.1:5500/resources/styles/login.css">
-    <link rel="icon" type="image/x-icon" href="http://127.0.0.1:5500/resources/icons/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="http://127.0.0.1:5500/resources/icons/logo.ico">
 </head>
-
-<!--<header>
-        <img id="logo" src="C:\Users\sitrade\Desktop\UniBookMi prove2\logo.png" alt="Logo del tuo sito">
-</header>-->
-
 
 <body>
 
     <div class="container" id="container">
         <div class="form-container sign-up">
             <form id="formRegister" >
-                <h1>Create Account</h1>
-                <input type="text" placeholder="Name" name="nome", id="nomeRegistration">
+                <h1>Crea un Account</h1>
+                <input type="text" placeholder="Name and Surname" name="nome", id="nomeRegistration">
                 <input type="email" placeholder="Email" name="email", id="emailRegistration">
                 <input type="password" placeholder="Password" name="password", id="passwordRegistration">
-                <button type="submit" id="signUp">Sign Up</button>
+                <button type="submit" id="signUp">Registrati</button>
             </form>
         </div>
         <div class="form-container sign-in">
             <form>
-                <h1>Autenticate</h1>
+                <h1>Autenticazione</h1>
                 <input type="email" placeholder="Email", id="emailLogin">
                 <input type="password" placeholder="Password" id="passwordLogin">
-                <a href="#">Forget Your Password?</a>
-                <button id="signIn">Sign In</button>
+                <a href="http://127.0.0.1:5500/features/login/resetpassword.html">Password Dimenticata?</a>
+                <button id="signIn">Accedi</button>
             </form>
         </div>
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
-                    <h1>Welcome Back!</h1>
-                    <p>Enter your personal details to use all of site features</p>
-                    <button class="hidden" id="login">Sign In</button>
+                    <h1>Bentornato!</h1>
+                    <p>Accedi con le tue credenziali per usufruire di tutti i servizi</p>
+                    <button class="hidden" id="login">Accedi</button>
                 </div>
                 <div class="toggle-panel toggle-right">
                     <h1>UniBookMi</h1>
-                    <p>Università Degli Studi Di Milano</p>
-                    <button class="hidden" id="register">Sign Up</button>
+                    <h3>Università Degli Studi Di Milano</h3>
+                    <p>Crea un'Account</p>
+                    <button class="hidden" id="register">Registrati</button>
                 </div>
             </div>
         </div>
