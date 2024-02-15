@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>UnoBookMi - Prenotazioni</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://127.0.0.1:5500/resources/styles/reservation.css">
+        <link rel="icon" type="image/x-icon" href="http://127.0.0.1:5500/resources/icons/logo2.ico">
+    </head>
+    <body>
+        
+        <section class = "banner">
+            <h2>PRENOTA LA TUA AULA QUI!</h2>
+            <div class = "card-container">
+                <div class = "card-img">
+                </div>
+
+                <div class = "card-content">
+                    <h3>Prenotazioni</h3>
+                    <form>
+
+                        <div class="form-row">
+                            <input type="text" id="datepicker" placeholder="Select Date" >
+                            <!-- Input text per mostrare la data selezionata -->
+                            <input type="hidden" id="selected-date" name="selected-date" >
+                        </div>
+
+                        <div class="form-row">
+                            <select name="class" >
+                                <option value="class-select">Seleziona Aula</option>
+                                <option value="50">Aula Alfa - Paolo Ceravolo - Max 20Pers.</option>
+                                <option value="50">Aula Beta - Nello Scarabottolo - Max 35Pers.</option>
+                                <option value="50">Aula Gamma - Michele Ferrazano - Max 15Pers.</option>
+                                <option value="50">Aula Delta - Ernesto Damiani - Max 10Pers.</option>
+                                <option value="50">Aula Epsilon - Vincenzo Piuri - Max 45Pers.</option>
+                                <option value="50">Aula Zeta - Mario Testino - Max 30Pers.</option>
+                                <option value="50">Aula Eta - Anisetti Marco - Max 55Pers.</option>
+                            </select>
+                        </div>
+
+                        <div class = "form-row">
+                            <input type = "text" placeholder="Full Name" >
+                            <input type = "text" placeholder="Matricola" >
+                            <input type = "email" placeholder="Email" >
+                        </div>
+
+                        <div class = "form-row">
+                            <select name="Address" >
+                                <option value="Address">Address/location</option>
+                                <option value="50">Via Celoria</option>
+                                <option value="50">Via Venezian</option>
+                                <option value="50">Via Golgi</option>
+                            </select>
+                            <input type="button" id="bookButton" value="Prenota aula">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <div>
+            <script src="http://127.0.0.1:5500/features/reservation/reservation.js"></script>
+        </div>
+        
+    </body>
+</html>
