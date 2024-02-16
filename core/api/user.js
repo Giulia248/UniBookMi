@@ -41,7 +41,8 @@ app.listen(port, () => {
 
 
 app.get('/getInfo', (req, res) => {
-    res.status(200).json({ name: userName, email: userEmail });
+
+    res.json({ name: userName, email: userEmail });
 });
 
 // POST add user service
@@ -131,8 +132,6 @@ app.post('/modifyUser', (req, res) => {
 // GET all reservations
 app.get('/getReservations', (req, res) => {
 
-    const email = req.query.email;
-
     const sql = `SELECT * FROM reservations WHERE email = ?`;
     con.query(sql, [userEmail], (err, result) => {
         if (err) {
@@ -140,7 +139,9 @@ app.get('/getReservations', (req, res) => {
             res.status(500).json({ message: `Nessuna prenotazione con email ${email}` });
             throw err;
         } else {
-            res.status(200).json({ date: result.body.date, address: result.body.address, roomType: result.body.roomType });
+
+            console.log("RESULT -> ", result[0]);
+            res.json(result);
             console.log('🩵🩵 SELECT query successful');
         };
     });
