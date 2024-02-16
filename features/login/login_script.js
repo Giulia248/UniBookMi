@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
 
         // just for test
-        window.location.href = 'http://127.0.0.1:5500/features/home/index.html';
-        return;
+        //window.location.href = 'http://127.0.0.1:5500/features/home/index.html';
+        //return;
         //
 
         // Validazione campi di input
@@ -77,6 +77,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.location.href = 'http://127.0.0.1:5500/features/home/index.html';
                 return data.json();
             });
+
+            
     });
 
     // LOG IN --------------------------------------------------------------------
@@ -89,8 +91,8 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
 
         // just for test
-        window.location.href = 'http://127.0.0.1:5500/features/home/index.html';
-        return;
+        //window.location.href = 'http://127.0.0.1:5500/features/home/index.html';
+        // return;
         //
 
         // Validazione campi di input
