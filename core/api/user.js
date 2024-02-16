@@ -5,6 +5,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 var userEmail = "";
+var userName ="";
 
 
 const app = express();
@@ -39,7 +40,9 @@ app.listen(port, () => {
 });
 
 
-
+app.get('/getInfo', (req, res) => {
+    res.status(200).json({ name: userName, email: userEmail });
+});
 
 // POST add user service
 app.post('/addUser', (req, res) => {
@@ -59,6 +62,7 @@ app.post('/addUser', (req, res) => {
                 res.status(500).send('Error executing INSERT query:');
                 return;
             } else {
+                userName =  nome;
                 userEmail = email;
                 res.status(200).json({ message: 'Insert successful' });
                 console.log('🩵🩵INSERT query successful');
@@ -85,6 +89,7 @@ app.get('/getUser', (req, res) => {
             bcrypt.compare(password, passwordUser)
               .then(isMatch => {
                 if (isMatch) {
+                    userName =  result[0].nome;
                 userEmail = email;
                   return res.status(200).json({ message: 'Login successful' });
                 } else {
@@ -129,13 +134,13 @@ app.get('/getReservations', (req, res) => {
     const email = req.query.email;
 
     const sql = `SELECT * FROM reservations WHERE email = ?`;
-    con.query(sql, [email], (err, result) => {
+    con.query(sql, [userEmail], (err, result) => {
         if (err) {
             console.error('💀💀Error executing SELECT query:', err);
             res.status(500).json({ message: `Nessuna prenotazione con email ${email}` });
             throw err;
         } else {
-            res.status(200).json({ date: result.body.date, address: result.body.address, roomId: result.body.roomId });
+            res.status(200).json({ date: result.body.date, address: result.body.address, roomType: result.body.roomType });
             console.log('🩵🩵 SELECT query successful');
         };
     });
