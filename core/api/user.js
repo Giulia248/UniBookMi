@@ -4,6 +4,9 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
+var userEmail = "";
+var userName ="";
+
 
 const app = express();
 // Enable CORS for all routes
@@ -37,6 +40,10 @@ app.listen(port, () => {
 });
 
 
+app.get('/getInfo', (req, res) => {
+
+    res.json({ name: userName, email: userEmail });
+});
 
 // POST add user service
 app.post('/addUser', (req, res) => {
@@ -56,6 +63,8 @@ app.post('/addUser', (req, res) => {
                 res.status(500).send('Error executing INSERT query:');
                 return;
             } else {
+                userName =  nome;
+                userEmail = email;
                 res.status(200).json({ message: 'Insert successful' });
                 console.log('🩵🩵INSERT query successful');
             }
@@ -81,6 +90,8 @@ app.get('/getUser', (req, res) => {
             bcrypt.compare(password, passwordUser)
               .then(isMatch => {
                 if (isMatch) {
+                    userName =  result[0].nome;
+                userEmail = email;
                   return res.status(200).json({ message: 'Login successful' });
                 } else {
                   return res.status(401).json({ message: 'Invalid password' });
@@ -96,21 +107,29 @@ app.get('/getUser', (req, res) => {
 
 
 // POST modify user service
-app.post('/modifyUser', (req, res) => {
+app.post('/modifyPassword', (req, res) => {
 
     console.log("⚡⚡ POST BODY -> ", req.body);
-    const { email, nome, newEmail } = req.body;
-    const sql = 'UPDATE users SET name = ?, newEmail = ? WHERE email = ?';
-        con.query(sql, [email, nome, hash], (err, result) => {
+    const { password, email } = req.body;
+    const sql = 'UPDATE utentii SET password = ? WHERE email = ?';
+
+    bcrypt.hash(password, 10, (err, hash) => {
+        if (err) {
+            console.error('Error hashing password:', err);
+            return;
+        }
+        console.log('Hashed password:', hash);
+        con.query(sql, [hash, email], (err, result) => {
             if (err) {
-                console.error('💀💀Error executing UPDATE query:', err);
-                res.status(500).send('Error executing UPDATE query:');
+                console.error('💀💀Error executing INSERT query:', err);
+                res.status(500).send('Error executing INSERT query:');
                 return;
             } else {
                 res.status(200).json({ message: 'Insert successful' });
-                console.log('🩵🩵 UPDATE query successful');
+                console.log('🩵🩵INSERT query successful');
             }
         });
+    });
 });
 
 
@@ -121,29 +140,29 @@ app.post('/modifyUser', (req, res) => {
 // GET all reservations
 app.get('/getReservations', (req, res) => {
 
-    const email = req.query.email;
-
     const sql = `SELECT * FROM reservations WHERE email = ?`;
-    con.query(sql, [email], (err, result) => {
+    con.query(sql, [userEmail], (err, result) => {
         if (err) {
             console.error('💀💀Error executing SELECT query:', err);
             res.status(500).json({ message: `Nessuna prenotazione con email ${email}` });
             throw err;
         } else {
-            res.status(200).json({ date: result.body.date, address: result.body.address, roomId: result.body.roomId });
+
+            console.log("RESULT -> ", result[0]);
+            res.json(result);
             console.log('🩵🩵 SELECT query successful');
         };
     });
 });
 
-
 // POST add reservation service
 app.post('/addReservation', (req, res) => {
+    console.log("EMAIL -> ", userEmail)
 
     console.log("⚡⚡POST BODY -> ", req.body)
-    const { email, date, address, roomId } = req.body;
-    var sql = "INSERT INTO utentii (email, date, address, roomId) VALUES (?, ?, ?, ?)";
-        con.query(sql, [email, date, address, roomId], (err, result) => {
+    const { selectedDate, classroom, address } = req.body;
+    var sql = "INSERT INTO reservations (email, date, roomType, address) VALUES ( ?, ?, ?, ?)";
+        con.query(sql, [userEmail, selectedDate, classroom, address], (err, result) => {
             if (err) {
                 console.error('💀💀Error executing INSERT query:', err);
                 res.status(500).send('Error executing INSERT query:');
@@ -160,7 +179,7 @@ app.post('/deleteReservation', (req, res) => {
 
     console.log("⚡⚡ DELETE BODY -> ", req.body)
     const { idReservation } = req.body;
-    const sql = 'DELETE FROM users WHERE id = ?';
+    const sql = 'DELETE FROM reservations WHERE id = ?';
         con.query(sql, [idReservation], (err, result) => {
             if (err) {
                 console.error('💀💀Error executing DELETE query:', err);

@@ -30,16 +30,40 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Mostra un messaggio di conferma
-        const confirmationMessage = document.getElementById('confirmationMessage');
-        confirmationMessage.innerHTML = "La password è stata modificata con successo!";
-        confirmationMessage.style.display = "block";
 
-        // Ritorna alla pagina di login dopo un certo periodo di tempo
-        setTimeout(function () {
-            window.location.href = 'http://127.0.0.1:5500/features/login/login.html';
-        }, 3000); // Ritorna alla pagina di login dopo 3 secondi
+        const requestBody = {
+            email: resetEmail,
+            password: newPassword
+        }
+
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestBody),
+
+        };
+
+        fetch('http://localhost:3000/modifyPassword', options)
+            .then(data => {
+                if (!data.ok) {
+                    alert("Errore nel cambio password");
+                    throw Error(data.status);
+                };
+                // Mostra un messaggio di conferma
+                const confirmationMessage = document.getElementById('confirmationMessage');
+                confirmationMessage.innerHTML = "La password è stata modificata con successo!";
+                confirmationMessage.style.display = "block";
+
+                // Ritorna alla pagina di login dopo un certo periodo di tempo
+                setTimeout(function () {
+                    window.location.href = 'http://127.0.0.1:5500/features/login/login.html';
+                }, 3000); // Ritorna alla pagina di login dopo 3 secondi
+            });
     });
+
+
 
     // Funzione per validare la sicurezza della password
     function validatePassword(password) {

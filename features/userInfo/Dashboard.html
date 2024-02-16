@@ -31,7 +31,7 @@
 
         <ul class="sidebar-list">
           <li class="sidebar-list-item">
-            <a href="http://127.0.0.1:5500/features/userInfo/UserInfoView.html">
+            <a href="http://127.0.0.1:5500/features/userInfo/Dashboard.html">
               <span class="material-icons-outlined">dashboard</span> Dashboard
             </a>
           </li>
@@ -68,36 +68,22 @@
         <div class="fixed-info">
             <h1>I tuoi Dati:</h1>
             <ul>
-                <li><strong>Tipo di corso:</strong> <span id="tipodiCorso"></span></li>
-                <li><strong>Corso:</strong> <span id="corso"></span></li>
-                <li><strong>Anno:</strong> <span id="anno"></span></li>
-                <li><strong>Tipo di iscrizione:</strong> <span id="tipodiiscrizione"></span></li>
-                <li><strong>Matricola:</strong> <span id="matricola"></span></li>
-                <li><strong>Ultimo anno di iscrizione:</strong> <span id="Ultimoaanodiiscrizione"></span></li>
-                <li><strong>Residenza:</strong> <span id="residenza"></span></li>
-                <li><strong>Telefono:</strong> <span id="telefono"></span></li>
-                <li><strong>Recapito:</strong> <span id="recapito"></span></li>
-                <li><strong>Cellulare:</strong> <span id="cellulare"></span></li>
+              <li><strong>Nome:</strong> <span id="nome"></span></li>
                 <li><strong>Email:</strong> <span id="email"></span></li>
             </ul>
         </div>
+        <div id="reservationsContainer">
         <div class="fixed-info">
             <h1>Le tue Aule Prenotate:</h1>
-         <ul>
-            <li><strong>Num. Aula:</strong> <span id="Num.Aula"></span></li>
-            <li><strong>Sede:</strong> <span id="Sede"></span></li>
-            <li><strong>Indirizzo sede:</strong> <span id="Indirizzosede"></span></li>
-            <li><strong>Orario di Prenotazione Aula:</strong> <span id="OrariodiPrenotazioneAula"></span></li>
-         </ul>
+            <ul id="roomList"></ul>
         </div>
+      </div>
+
     </main>
       <!-- End Main -->
 
         
     <!-- Scripts -->
-    <!-- ApexCharts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
-    <!-- Custom JS -->
-    <script src="http://127.0.0.1:5500/features/userInfo/userInfo.js"></script>
+    <script src="http://127.0.0.1:5500/features/userInfo/dashboardScript.js"></script>
   </body>
 </html>
