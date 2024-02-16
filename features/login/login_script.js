@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
             body: JSON.stringify(formData),
 
         };
+
         fetch('http://localhost:3000/addUser', options)
             .then(data => {
                 if (!data.ok) {
