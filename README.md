@@ -22,6 +22,7 @@ Gli utenti registrati (possibilmente con il servizio di sign-on di UNIMI) posson
 - https://dev.to/noruwa/folder-structure-for-modern-web-applications-4d11 FOLDER STRUCTURE
 - https://www.w3schools.com/xml/ajax_intro.asp AJAX
 - https://www.freecodecamp.org/news/how-to-make-api-calls-with-fetch/ API calls GET and POST
+- https://dev.mysql.com/downloads/file/?id=523567 MySql download link
 
 How to indent in VScode <br />
 On Windows Shift + Alt + F <br />
