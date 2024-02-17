@@ -12,13 +12,13 @@ const options = {
 
 
 fetch("http://localhost:3000/getInfo", options)
-.then(response => response.json())
-.then(responseJson => {
-  // Access the JSON data and update HTML content
-  document.getElementById('nome').innerText = responseJson.name;
-      document.getElementById('email').innerText = responseJson.email;
-})
-.catch(error => console.error('Error fetching data:', error));
+  .then(response => response.json())
+  .then(responseJson => {
+    // Access the JSON data and update HTML content
+    document.getElementById('nome').innerText = responseJson.name;
+    document.getElementById('email').innerText = responseJson.email;
+  })
+  .catch(error => console.error('Error fetching data:', error));
 
 
 
@@ -37,18 +37,26 @@ fetch("http://localhost:3000/getReservations", options)
 
     // Loop through each object in the JSON data array
     responseJson.forEach(item => {
-        // Create list item element
-        const listItem = document.createElement('li');
+      // Create list item element
+      const listItem = document.createElement('li');
 
-        // Populate list item with JSON data
-        listItem.innerHTML = `
+      const date = new Date(item.date);
+
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0'); // Month is zero-based
+      const day = String(date.getDate()).padStart(2, '0');
+
+      const simpleDateFormat = `${day}-${month}-${year}`;
+
+      // Populate list item with JSON data
+      listItem.innerHTML = `
             <strong>Aula:</strong> <span>${item.roomType}</span><br>
             <strong>Indirizzo sede:</strong> <span>${item.address}</span><br>
-            <strong>Giorno:</strong> <span>${item.date}</span>
+            <strong>Giorno:</strong> <span>${simpleDateFormat}</span>
         `;
 
-        // Append list item to the room list
-        roomList.appendChild(listItem);
+      // Append list item to the room list
+      roomList.appendChild(listItem);
     });
   })
   .catch(error => console.error('Error fetching data:', error));

@@ -78,7 +78,7 @@ form input[type = text], form input[type = number], form input::placeholder, sel
 }
 form input[type = button]{
     color: #fff;
-    background: #f2745f;
+    background: #3131df;
     padding: 12px 0;
     border-radius: 4px;
     cursor: pointer;

@@ -86,6 +86,10 @@ app.get('/getUser', (req, res) => {
             throw err;
         } else {
             console.log('🩵🩵 SELECT query successful');
+            if  (result.length === 0){
+                console.error("Email non valida o non registrata");
+                return;
+            }
             const passwordUser = result[0].password;
             bcrypt.compare(password, passwordUser)
               .then(isMatch => {
