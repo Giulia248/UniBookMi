@@ -1,50 +1,69 @@
+const API_KEY = "1d3a0eefa97b499d8fbc4ee93eeb40b7";
+const url = "https://newsapi.org/v2/everything?q=";
 
-// fetch local JSON
-function fetchJson() {
+window.addEventListener("load", () => fetchNews("Italy"));
 
-    fetch('http://127.0.0.1:5500/core/models/NewsModel.json')
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data)
-            appendData(data);
-        })
-        .catch(function (err) {
-            console.log('error: ' + err);
-        });
+function reload() {
+    window.location.reload();
 }
 
-
-// add data on html page
-function appendData(data) {
-    var mainContainer = document.getElementById("myDiv");
-    console.log("------------- lunghezza vv");
-    var size = Object.keys(data.news).length
-    console.log(size);
-    for (var i = 0; i < size; i++) {
-
-        var invisibleDiv = document.createElement("div");
-        invisibleDiv.id = "invisibleDiv"
-        mainContainer.appendChild(invisibleDiv);
-
-        var title = document.createElement("p");
-        title.id = "titleP"
-        title.innerHTML = data.news[i].title;
-        invisibleDiv.appendChild(title);
-
-        var photo = document.createElement("img");
-        photo.id = "img"
-        photo.src = data.news[i].url
-        invisibleDiv.appendChild(photo);
-
-        var text = document.createElement("p");
-        text.id = "textP"
-        text.innerHTML = data.news[i].text
-        invisibleDiv.appendChild(text);
-
-        var div = document.createElement("div");
-        invisibleDiv.appendChild(div);
-
-    }
+async function fetchNews(query) {
+    const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
+    const data = await res.json();
+    bindData(data.articles);
 }
+
+function bindData(articles) {
+    const cardsContainer = document.getElementById("cards-container");
+    const newsCardTemplate = document.getElementById("template-news-card");
+
+    cardsContainer.innerHTML = "";
+
+    articles.forEach((article) => {
+        if (!article.urlToImage) return;
+        const cardClone = newsCardTemplate.content.cloneNode(true);
+        fillDataInCard(cardClone, article);
+        cardsContainer.appendChild(cardClone);
+    });
+}
+
+function fillDataInCard(cardClone, article) {
+    const newsImg = cardClone.querySelector("#news-img");
+    const newsTitle = cardClone.querySelector("#news-title");
+    const newsSource = cardClone.querySelector("#news-source");
+    const newsDesc = cardClone.querySelector("#news-desc");
+
+    newsImg.src = article.urlToImage;
+    newsTitle.innerHTML = article.title;
+    newsDesc.innerHTML = article.description;
+
+    const date = new Date(article.publishedAt).toLocaleString("it-IT", {
+        timeZone: "Asia/Jakarta",
+    });
+
+    newsSource.innerHTML = `${article.source.name} · ${date}`;
+
+    cardClone.firstElementChild.addEventListener("click", () => {
+        window.open(article.url, "_blank");
+    });
+}
+
+let curSelectedNav = null;
+function onNavItemClick(id) {
+    fetchNews(id);
+    const navItem = document.getElementById(id);
+    curSelectedNav?.classList.remove("active");
+    curSelectedNav = navItem;
+    curSelectedNav.classList.add("active");
+}
+
+const searchButton = document.getElementById("search-button");
+const searchText = document.getElementById("search-text");
+
+searchButton.addEventListener("click", () => {
+    const query = searchText.value;
+    if (!query) return;
+    fetchNews(query);
+    curSelectedNav?.classList.remove("active");
+    curSelectedNav = null;
+});

@@ -24,12 +24,12 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
 
         // just for test
-        //window.location.href = 'http://127.0.0.1:5500/features/home/index.html';
+        // window.location.href = 'http://127.0.0.1:5500/features/home/index.html';
         //return;
         //
 
         // Validazione campi di input
-        const nameInput = document.querySelector('.sign-up input[placeholder="Name"]');
+        const nameInput = document.querySelector('.sign-up input[placeholder="Name and Surname"]');
         const emailInput = document.querySelector('.sign-up input[placeholder="Email"]');
         const passwordInput = document.querySelector('.sign-up input[placeholder="Password"]');
 
@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
             body: JSON.stringify(formData),
 
         };
+        console.log("AAAAAAA");
 
         fetch('http://localhost:3000/addUser', options)
             .then(data => {
@@ -92,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
 
         // just for test
-        //window.location.href = 'http://127.0.0.1:5500/features/home/index.html';
+        // window.location.href = 'http://127.0.0.1:5500/features/home/index.html';
         // return;
         //
 
