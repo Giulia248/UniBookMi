@@ -122,15 +122,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 'Content-Type': 'application/json',
             }
         };
-        fetch(`http://localhost:3000/getUser?email=${email}&password=${password}`, options)
+
+        const encodedPassword = encodeURIComponent(password);
+
+        fetch(`http://localhost:3000/getUser?email=${email}&password=${encodedPassword}`, options)
         .then(response => {
             if (!response.ok) {
 
                 if (response.status == 401){
                     alert("password errata");
                     return;
-                }else{
-                    alert("Errore , ", response.status);
+                }else if (response.status == 500){
+                    alert("Email non valida o non registrata");
                     return;
                 }
             }else{
