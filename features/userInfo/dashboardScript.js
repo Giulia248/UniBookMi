@@ -37,50 +37,84 @@ fetch("http://localhost:3000/getReservations", options)
 
     // Loop through each object in the JSON data array
     responseJson.forEach(item => {
+
       // Create list item element
       const listItem = document.createElement('li');
 
       const date = new Date(item.date);
 
+      const day = date.getDate().toString().padStart(2, '0');
+      const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
       const year = date.getFullYear();
-      const month = String(date.getMonth() + 1).padStart(2, '0'); // Month is zero-based
-      const day = String(date.getDate()).padStart(2, '0');
 
-      const simpleDateFormat = `${day}-${month}-${year}`;
+      const formattedDate = `${day}-${month}-${year}`;
 
       // Populate list item with JSON data
       listItem.innerHTML = `
             <strong>Aula:</strong> <span>${item.roomType}</span><br>
             <strong>Indirizzo sede:</strong> <span>${item.address}</span><br>
-            <strong>Giorno:</strong> <span>${simpleDateFormat}</span>
-            <input type="button" id="roomListBtn" class="roomListBtn ${simpleDateFormat}" value="Cancella prenotazione ${simpleDateFormat} ">
+            <strong>Giorno:</strong> <span>${formattedDate}</span>
+            <input type="button" id="roomListBtn" class="roomListBtn ${formattedDate}" value="Cancella prenotazione">
             
-        `;   
+        `;
 
-       // Append list item to the room list
-       roomList.appendChild(listItem);
+      // Append list item to the room list
+      roomList.appendChild(listItem);
 
+      document.querySelectorAll(".roomListBtn").forEach(button => {
+        console.log(button.classList);
 
-         
-  document.querySelectorAll(".roomListBtn").forEach(button => {
-    console.log(button.classList);
-
-    if( button.classList[1] === `${simpleDateFormat}`){
-    button.addEventListener("click", function(event) {
-        event.preventDefault();
-        const buttonText = event.target.value;
-        alert(buttonText + " was clicked");
-        return;
-        // Perform other actions based on the clicked button
-    });
-  }
-
-});
+        if (button.classList[1] === `${formattedDate}`) {
+          button.addEventListener("click", function (event) {
+            event.preventDefault();
+            deleteReservation(item.date);
+            return;
+            // Perform other actions based on the clicked button
+          });
+        }
 
       });
-     
+
+    });
+
   })
   .catch(error => console.error('Error fetching data:', error));
+
+
+
+// delete reservation call
+function deleteReservation(data) {
+
+  var confirmed = window.confirm("Sei sicuro di voler cancellare la prenotazione?");
+
+  // Check if the user clicked "OK"
+  if (confirmed) {
+
+    fetch(`http://localhost:3000/deleteReservation?date=${data}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        // Include any other headers as needed
+      },
+    })
+      .then(response => {
+        if (response.status === 500) {
+          alert("Qualcosa è andato storto...");
+          throw new Error('Qualcosa è andato storto');
+        }
+        // Handle successful response
+        alert("Prenotazione cancellata!");
+        console.log('DELETE request successful');
+      })
+      .catch(error => {
+        console.error('There was a problem with your fetch operation:', error);
+      });
+
+
+
+    // Perform actions when "OK" is clicked
+  }
+}
 
 // SIDEBAR TOGGLE
 

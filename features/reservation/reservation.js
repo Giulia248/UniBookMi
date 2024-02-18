@@ -55,6 +55,7 @@ $("#bookButton").on("click", function () {
         body: JSON.stringify(formData),
 
     };
+    
     fetch('http://localhost:3000/addReservation', options)
         .then(data => {
             if (!data.ok) {
