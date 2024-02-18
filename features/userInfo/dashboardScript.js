@@ -1,7 +1,9 @@
 // Recupera i dati salvati dal form del profilo dall'archiviazione locale
 
 
+// values
 
+var dateSelected
 // user info
 const options = {
   method: 'GET',
@@ -33,8 +35,6 @@ fetch("http://localhost:3000/getReservations", options)
     // Clear existing content
     roomList.innerHTML = '';
 
-    console.log(responseJson);
-
     // Loop through each object in the JSON data array
     responseJson.forEach(item => {
       // Create list item element
@@ -53,11 +53,32 @@ fetch("http://localhost:3000/getReservations", options)
             <strong>Aula:</strong> <span>${item.roomType}</span><br>
             <strong>Indirizzo sede:</strong> <span>${item.address}</span><br>
             <strong>Giorno:</strong> <span>${simpleDateFormat}</span>
-        `;
+            <input type="button" id="roomListBtn" class="roomListBtn ${simpleDateFormat}" value="Cancella prenotazione ${simpleDateFormat} ">
+            
+        `;   
 
-      // Append list item to the room list
-      roomList.appendChild(listItem);
+       // Append list item to the room list
+       roomList.appendChild(listItem);
+
+
+         
+  document.querySelectorAll(".roomListBtn").forEach(button => {
+    console.log(button.classList);
+
+    if( button.classList[1] === `${simpleDateFormat}`){
+    button.addEventListener("click", function(event) {
+        event.preventDefault();
+        const buttonText = event.target.value;
+        alert(buttonText + " was clicked");
+        return;
+        // Perform other actions based on the clicked button
     });
+  }
+
+});
+
+      });
+     
   })
   .catch(error => console.error('Error fetching data:', error));
 

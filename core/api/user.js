@@ -179,12 +179,12 @@ app.post('/addReservation', (req, res) => {
 });
 
 // DELETE reservation
-app.post('/deleteReservation', (req, res) => {
+app.delete('/deleteReservation', (req, res) => {
 
     console.log("⚡⚡ DELETE BODY -> ", req.body)
-    const { idReservation } = req.body;
-    const sql = 'DELETE FROM reservations WHERE id = ?';
-        con.query(sql, [idReservation], (err, result) => {
+    const { date } = req.body;
+    const sql = 'DELETE FROM reservations WHERE date = ?';
+        con.query(sql, [date], (err, result) => {
             if (err) {
                 console.error('💀💀Error executing DELETE query:', err);
                 res.status(500).send('Error executing DELETE query:');
