@@ -148,6 +148,26 @@ body {
   
   /* ---------- MAIN ---------- */
   
+  #roomListBtn{
+    color: #fff;
+    background: #3131df;
+    padding: 12px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-weight: 300;
+    display: block;
+    margin: 15px 12px;
+    padding: 5px;
+    height: 80%;
+}
+
+
+
   .main-container {
     grid-area: main;
     overflow-y: auto;

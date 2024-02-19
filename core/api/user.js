@@ -66,7 +66,7 @@ app.post('/addUser', (req, res) => {
                 userName =  nome;
                 userEmail = email;
                 res.status(200).json({ message: 'Insert successful' });
-                console.log('🩵🩵INSERT query successful');
+                console.log('🩵🩵INSERT new user successful');
             }
         });
     });
@@ -130,7 +130,7 @@ app.post('/modifyPassword', (req, res) => {
                 return;
             } else {
                 res.status(200).json({ message: 'Insert successful' });
-                console.log('🩵🩵INSERT query successful');
+                console.log('🩵🩵INSERT new password successful');
             }
         });
     });
@@ -152,9 +152,9 @@ app.get('/getReservations', (req, res) => {
             throw err;
         } else {
 
-            console.log("RESULT -> ", result[0]);
+            console.log("RESULT -> ", result);
             res.json(result);
-            console.log('🩵🩵 SELECT query successful');
+            console.log('🩵🩵 SELECT reservation/s successful');
         };
     });
 });
@@ -173,25 +173,25 @@ app.post('/addReservation', (req, res) => {
                 return;
             } else {
                 res.status(200).json({ message: 'Insert successful' });
-                console.log('🩵🩵INSERT query successful');
+                console.log('🩵🩵INSERT reservation successful');
             }
         });
 });
 
 // DELETE reservation
-app.post('/deleteReservation', (req, res) => {
+app.delete('/deleteReservation', (req, res) => {
 
-    console.log("⚡⚡ DELETE BODY -> ", req.body)
-    const { idReservation } = req.body;
-    const sql = 'DELETE FROM reservations WHERE id = ?';
-        con.query(sql, [idReservation], (err, result) => {
+    console.log("⚡⚡ DELETE BODY -> ", req.query.date)
+    const date = req.query.date;
+    const sql = 'DELETE FROM reservations WHERE date = ?';
+        con.query(sql, [date], (err, result) => {
             if (err) {
                 console.error('💀💀Error executing DELETE query:', err);
                 res.status(500).send('Error executing DELETE query:');
                 return;
             } else {
                 res.status(200).json({ message: 'DELETE successful' });
-                console.log('🩵🩵 DELETE query successful');
+                console.log('🩵🩵 DELETE reservation successful');
             }
         });
 });
