@@ -74,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function () {
             body: JSON.stringify(formData),
 
         };
-        console.log("AAAAAAA");
 
         fetch('http://localhost:3000/addUser', options)
             .then(data => {
@@ -154,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
            
           })
           .catch(error => {
-            console.error('There was a problem with your fetch operation:', error);
+            console.error('C`è stato un problema:', error);
           });
     });
 });

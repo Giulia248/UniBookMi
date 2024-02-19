@@ -1,6 +1,3 @@
-// Recupera i dati salvati dal form del profilo dall'archiviazione locale
-
-
 // values
 
 var dateSelected
@@ -69,7 +66,6 @@ fetch("http://localhost:3000/getReservations", options)
             event.preventDefault();
             deleteReservation(item.date);
             return;
-            // Perform other actions based on the clicked button
           });
         }
 
@@ -78,7 +74,7 @@ fetch("http://localhost:3000/getReservations", options)
     });
 
   })
-  .catch(error => console.error('Error fetching data:', error));
+  .catch(error => console.error('C`è stato un problema:', error));
 
 
 
@@ -105,14 +101,11 @@ function deleteReservation(data) {
         // Handle successful response
         alert("Prenotazione cancellata!");
         console.log('DELETE request successful');
+        location.reload();
       })
       .catch(error => {
-        console.error('There was a problem with your fetch operation:', error);
+        console.error('C`è stato un problema :', error);
       });
-
-
-
-    // Perform actions when "OK" is clicked
   }
 }
 

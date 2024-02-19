@@ -96,7 +96,7 @@ a.active {
 
 .booking-text {
     position: absolute;
-    top: 58%;
+    top: 55%;
     left: 32%;
     transform: translate(-50%, -50%);
     font-size: 320%; /* Puoi regolare la dimensione del carattere a tuo piacimento */

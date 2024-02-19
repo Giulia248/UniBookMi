@@ -11,7 +11,7 @@ var userName ="";
 const app = express();
 // Enable CORS for all routes
 app.use(cors());
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; // assigns the value of the environment variable PORT to the constant port
 
 
 // Middleware to parse incoming request bodies
