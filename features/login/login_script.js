@@ -51,6 +51,12 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         };
 
+        const emailValue = emailInput.value.trim()
+        if (!(emailValue.includes("unimi.it"))){
+            alert("Inserire un indirizzo email unimi (unimi.it).");
+            return;
+        }
+
 
 
         var formData = {
@@ -110,6 +116,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(emailInput.value.trim())) {
             alert("Inserire un indirizzo email valido.");
+            return;
+        }
+
+        const emailValue = emailInput.value.trim()
+        if (!(emailValue.includes("unimi.it"))){
+            alert("Inserire un indirizzo email unimi (unimi.it).");
             return;
         }
 
