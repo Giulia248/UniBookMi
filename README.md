@@ -2,6 +2,7 @@
 
 ## UniBookMi is an University project made based on registration and reserving rooms
 
+### UniBookMi has got 30 points out of 30 con lode
 -------------------------------------------------------------------------------------
 Registro di accesso a una stanza
 A causa delle norme di distanziamento introdotte per contenere l'epidemia di COVID-19 nei laboratori di ricerca è necessario registrare gli accessi.
