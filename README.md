@@ -2,6 +2,7 @@
 
 ## UniBookMi is an University project made based on registration and reserving rooms
 
+### UniBookMi has got 30 points out of 30 con lode
 -------------------------------------------------------------------------------------
 Registro di accesso a una stanza
 A causa delle norme di distanziamento introdotte per contenere l'epidemia di COVID-19 nei laboratori di ricerca è necessario registrare gli accessi.
@@ -18,9 +19,13 @@ Gli utenti registrati (possibilmente con il servizio di sign-on di UNIMI) posson
 
 ### Souces and help
 
-https://dev.to/noruwa/folder-structure-for-modern-web-applications-4d11
+- https://ssrionline.unimi.it/mod/forum/discuss.php?d=7183 Project rules
+- https://dev.to/noruwa/folder-structure-for-modern-web-applications-4d11 FOLDER STRUCTURE
+- https://www.w3schools.com/xml/ajax_intro.asp AJAX
+- https://www.freecodecamp.org/news/how-to-make-api-calls-with-fetch/ API calls GET and POST
+- https://dev.mysql.com/downloads/file/?id=523567 MySql download link
 
-
-
-
-
+How to indent in VScode <br />
+On Windows Shift + Alt + F <br />
+On Mac Shift + Option + F <br />
+On Ubuntu Ctrl + Shift + I

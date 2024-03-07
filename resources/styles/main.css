@@ -1,0 +1,350 @@
+/*
+
+TemplateMo 554 Ocean Vibes
+
+https://templatemo.com/tm-554-ocean-vibes
+
+*/
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 19px;
+    line-height: 1.8em;
+    overflow-x: hidden;
+}
+
+p,
+span,
+em,
+a,
+address {
+    color: #848586;
+}
+
+blockquote {
+    margin: 0 0 30px 10px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.tm-page-title {
+    font-size: 30px;
+}
+
+body,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+h2,
+p {
+    margin-top: 0;
+}
+
+a:hover,
+a.active {
+    color: #309AFD;
+}
+
+.tm-site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.tm-header-container {
+    display: flex;
+    align-items: center;
+}
+.tm-mt-0 {
+    margin-top: 15;
+}
+
+.tm-mb-15 {
+    margin-bottom: 15px;
+}
+
+.tm-color-primary {
+    color: #002db3;
+}
+
+.tm-color-gray-2 {
+    color: rgba(0, 0, 0, .5);
+}
+
+.tm-tagline {
+    font-size: 1.5rem;
+    margin-left: 1300px;
+}
+
+.tm-color-light-gray {
+    color: #9E9FA0;
+}
+
+.booking-text {
+    position: absolute;
+    top: 55%;
+    left: 32%;
+    transform: translate(-50%, -50%);
+    font-size: 320%; /* Puoi regolare la dimensione del carattere a tuo piacimento */
+    color: rgb(0, 0, 0); /* Imposta il colore del testo su nero */
+    text-decoration: none; /* Rimuove il sottolineato dal link */
+    transition: color 0.3s;
+    text-shadow: -2px -2px 0 #ffffff,  
+                 2px -2px 0 #ffffff,
+                 -2px 2px 0 #ffffff,
+                 2px 2px 0 #ffffff;
+}
+
+
+.tm-btn {
+    display: block;
+    padding: 10px 20px;
+    background-color: #002db3; /* Cambia il colore di sfondo del bottone */
+    color: #fff; /* Cambia il colore del testo del bottone */
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+    margin-top: 0%; /* Aggiungi uno spazio sopra il bottone */
+    position: absolute; /* Imposta il bottone come posizione assoluta */
+    left: 62%; /* Sposta il bottone a metà della larghezza del contenitore */
+    transform: translateX(-30%); /* Centra il bottone orizzontalmente */
+    bottom: 24%; /* Sposta il bottone sotto la scritta */
+}
+
+.tm-btn:hover {
+    background-color: #002db3; /* Cambia il colore di sfondo al passaggio del mouse */
+}
+
+.booking-text a:hover {
+    color: rgb(0, 0, 0); /* Cambia il colore del testo a blu quando il cursore è sopra il link */
+}
+
+#tm-video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#tm-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the entire container */
+}
+
+.tm-container {
+    position: relative;
+    z-index: 1; /* Imposta lo z-index in modo che il contenuto sia sopra il video */
+    max-width: 1254px;
+    padding-left: 15%;
+    margin: 0 auto 135px;
+}
+
+.tm-main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.tm-nav-link {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 8px 12px;
+    border: 1px solid #000;
+    margin-left: 1px; /* Aggiunto margine a sinistra per separare i quadratini */
+    display: inline-block;
+}
+
+.tm-icons-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -34px; /* Regola il margine superiore per allineare i quadratini rispetto al titolo */
+}
+
+.tm-icon {
+    background-color: transparent; /* Rendi lo sfondo trasparente */
+    color: #002db3; /* Sostituisci con il colore del testo desiderato */
+    padding: 0px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 1000;
+}
+
+
+.tm-icon:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.2em; /* Adjust the thickness as needed */
+}
+
+.tm-icon.active {
+    text-decoration: underline;
+    text-decoration-thickness: 0.2em; /* Adjust the thickness as needed */
+}
+
+.tm-section-title {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+
+/* 
+====== Move-from-top effect ======
+*/
+.mfp-move-from-top .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.2s;
+    transform: translateY(-100px);
+}
+
+.mfp-move-from-top.mfp-bg {
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+.mfp-move-from-top.mfp-ready .mfp-with-anim {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mfp-move-from-top.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+
+.mfp-move-from-top.mfp-removing .mfp-with-anim {
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+.mfp-move-from-top.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+
+.tm-nav-link {
+    color: #000; /* Set text color to black or your preferred color */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    display: inline-block; /* Display links in a line */
+    padding: 8px 12px; /* Add padding for a small border around each item */
+    border: 1px solid #000; /* Add border for each item */
+    margin: 0 5px; /* Add margin for spacing between items */
+}
+
+.tm-nav-link:hover {
+    color: #309AFD;
+    border-color: #309AFD;
+}
+
+.tm-nav-link.active {
+    color: #002db3;
+}
+
+.tm-nav-link i {
+    margin-top: 30px;
+    color: #002db3;
+}
+
+.fa,
+.far,
+.fas {
+    font-family: "Font Awesome 5 Free"
+}
+
+.fa,
+.fas {
+    font-weight: 900
+}
+
+.fa-3x {
+    font-size: 3em
+}
+
+.fa-water:before {
+    content: "\f773"
+}
+
+
+.tm-gallery-link-icon {
+    display: inline-block;
+    width: 30px;
+}
+
+.fab,
+.far {
+    font-weight: 400
+}
+
+
+.fa-images:before {
+    content: "\f302"
+}
+
+
+.fa-smile:before {
+    content: "\f118"
+}
+
+.fa-smile-beam:before {
+    content: "\f5b8"
+}
+
+.fa-smile-wink:before {
+    content: "\f4da"
+}
+
+
+.fa-tint:before {
+    content: "\f043"
+}
+
+.fa-tint-slash:before {
+    content: "\f5c7"
+}
+
+.fa-comments:before {
+    content: "\f086"
+}
+
+.fa-comments-dollar:before {
+    content: "\f653"
+}
+
+.fa,
+.fab,
+.fad,
+.fal,
+.far,
+.fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1
+}
+
+
+
+/* ---------------------------------------------------- */

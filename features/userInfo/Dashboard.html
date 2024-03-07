@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>UniBookMi Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="http://127.0.0.1:5500/resources/icons/logo2.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="http://127.0.0.1:5500/resources/styles/userInfo.css">
+  </head>
+  <body>
+    <div class="grid-container">
+
+
+
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="sidebar-brand">
+            <span class="material-icons-outlined">inventory</span> UniBookMi Dashboard
+          </div>
+          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+        </div>
+
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <a href="http://127.0.0.1:5500/features/userInfo/Dashboard.html">
+              <span class="material-icons-outlined">dashboard</span> Dashboard
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="http://127.0.0.1:5500/features/home/index.html">
+              <span class="material-icons-outlined">home</span>Homepage
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="http://127.0.0.1:5500/features/reservation/reservation.html">
+              <span class="material-icons-outlined">fact_check</span> Prenotazione Aule
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="http://127.0.0.1:5500/features/login/login.html">
+              <span class="material-icons-outlined">logout</span> Logout
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <!-- End Sidebar -->
+
+      <!-- Main -->
+    <main class="main-container">
+        <div class="main-title">
+          <p class="font-weight-bold">DASHBOARD</p>
+        </div>
+        
+        <div class="fixed-info">
+            <h1>I tuoi Dati:</h1>
+            <ul>
+              <li><strong>Nome:</strong> <span id="nome"></span></li>
+                <li><strong>Email:</strong> <span id="email"></span></li>
+            </ul>
+        </div>
+        <div id="reservationsContainer">
+        <div class="fixed-info">
+            <h1>Le tue Aule Prenotate:</h1>
+            <ul id="roomList"></ul>
+        </div>
+      </div>
+
+    </main>
+      <!-- End Main -->
+
+        
+    <!-- Scripts -->
+    <script src="http://127.0.0.1:5500/features/userInfo/dashboardScript.js"></script>
+  </body>
+</html>
